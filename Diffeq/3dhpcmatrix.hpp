@@ -24,6 +24,9 @@ struct column_major {
 	{
 		return n_x*n_y*k+n_x*j+i;
 	}
+	
+		
+	
 };
 
 /*
@@ -64,6 +67,41 @@ class matrix {
 			return n_z_;
 		}
 
+		unsigned int num_xy() const { //returns number of elements in xy plane
+			return n_x_*n_y_;		
+		}
+
+		unsigned int num_yz() const { //returns number of elements in yz plane
+			return n_y_*n_z_;		
+		}
+
+		unsigned int num_xz() const { //returns number of elements in xz plane
+			return n_x_*n_z_;		
+		}
+
+		unsigned int blocklength_xy{ //returns the blocklength of elements in data array
+			return n_x_*n_y_;
+		}
+
+		unsigned int blocklength_yz{ //returns the blocklength of elements in data array
+			return 1;
+		}
+
+		unsigned int blocklength_xz{ //returns the blocklength of elements in data array
+			return n_x_;
+		}
+
+		unsigned int stride_xy {
+			return n_x_*n_y_;
+		}
+
+		unsigned int stride_yz {
+			return n_x_;
+		}
+
+		unsigned int stride_xz {
+			return n_x_*n_y_;
+		}
 
 		unsigned int size1() const {
 			return Ordering::size1(n_x_,n_y_,n_z_);
