@@ -79,27 +79,27 @@ class matrix {
 			return n_x_*n_z_;		
 		}
 
-		unsigned int blocklength_xy{ //returns the blocklength of elements in data array
+		unsigned int blocklength_xy(){ //returns the blocklength of elements in data array
 			return n_x_*n_y_;
 		}
 
-		unsigned int blocklength_yz{ //returns the blocklength of elements in data array
+		unsigned int blocklength_yz(){ //returns the blocklength of elements in data array
 			return 1;
 		}
 
-		unsigned int blocklength_xz{ //returns the blocklength of elements in data array
+		unsigned int blocklength_xz(){ //returns the blocklength of elements in data array
 			return n_x_;
 		}
 
-		unsigned int stride_xy {
+		unsigned int stride_xy(){
 			return n_x_*n_y_;
 		}
 
-		unsigned int stride_yz {
+		unsigned int stride_yz(){
 			return n_x_;
 		}
 
-		unsigned int stride_xz {
+		unsigned int stride_xz(){
 			return n_x_*n_y_;
 		}
 

@@ -2,7 +2,7 @@
 #include <algorithm>
 #include "3dhpcmatrix.hpp"
 
-
+using namespace std;
 
 void test_column_major() {
 
@@ -39,7 +39,14 @@ void test_column_major() {
 
 	//  Test access to data pointer
 	//std::transform( m.data(), m.data() + (num_rows(m)*num_cols(m)), m.data(), [](double v){ return v + 5;} );
+	
+	cout << "size of planes" << endl;
+	cout << m.num_xy() << endl;
+	cout << m.num_xz() << endl;
+	cout << m.num_yz() << endl;
 
+
+	/*
 	//  Test copy constructor
 	matrix<double> a(m);
 	std::cout << a << std::endl;
@@ -55,6 +62,7 @@ void test_column_major() {
 
 	std::cout <<"m = " << m << std::endl;
 	std::cout <<"b = " << b << std::endl;
+	*/
 }
 
 
