@@ -1,0 +1,22 @@
+\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+%opening
+\title{Heat Equation}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem}
+\[\frac{\partial u(x,y,z,t)}{\partial t} = D\cdot \Delta u(x,y,z,t)\]
+\subsection{Finite differences and forward Euler}
+\begin{align*}
+ \Delta u(i,j,k)=& f(i,j,k) = \\
+ &\frac{1}{\Delta x^2} ( -6u(i,j,k)+u(i+1,j,k)+u(i-1,j,k)\\&+u(i,j+1,k)+u(i,j-1,k)+u(i,j,k+1)+u(i,j,k-1))
+\end{align*}
+\[u^{n+1}(i,j,k)=u^{n}(i,j,k)+\Delta t \cdot f(i,j,k)\]
+
+\end{document}
