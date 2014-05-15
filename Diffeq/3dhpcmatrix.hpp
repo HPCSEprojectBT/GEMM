@@ -155,8 +155,9 @@ class matrix {
 			swap(a.n_y_, b.n_y_);
 			swap(a.n_z_, b.n_z_);
 		}
-	private:
 		std::vector<value_type,Allocator> data_;
+
+	private:
 		unsigned int n_x_;
 		unsigned int n_y_;
 		unsigned int n_z_;
