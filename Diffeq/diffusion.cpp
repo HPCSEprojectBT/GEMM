@@ -25,7 +25,7 @@ int main (int argc, char **argv)
 	//-------------driver params----------------------------
 	int world_dim=3;
 	int dims[3]={0,0,0};
-	int N = 5; //target global number of DOFS in each direction
+	int N = 50; //target global number of DOFS in each direction
 	int N_new; //global number of DOFS in each direction after rounding 
 	double L = 1.; //edgelength of simulated cube
 	vector<double> dx(3,0); //discrete spacing in each direction
@@ -62,10 +62,12 @@ int main (int argc, char **argv)
 	MPI_Cart_shift(Comm_Cart, 1, 1, &front, &back);
 
 	//uncomment for testing neighbor distribution
+	/*
 	std::cout <<  "Rank " << rank << " has new rank " << newrank << " and neighbors " 
 		<< left << ", " << right << ", "
 		<< top << ", " << bottom << ", "
 		<< front << ", " << back << std::endl;
+	*/
 
 	//compute (local) sizes and offsets:
 	for (int i=0; i<world_dim; ++i){ //compute local matrix setting
@@ -73,6 +75,7 @@ int main (int argc, char **argv)
 		dx[i]=L/(n[i]*dims[i]);
 	}
 	N_new = n[0]*n[1]*n[2]*size; //round up N
+	if (rank ==0) cout << "n_new:= " << N_new << endl;
 
 	matrix<double> u(n[0]+2,n[1]+2,n[2]+2); //local matrix including ghost plains
 	matrix<double> u_old(n[0]+2,n[1]+2,n[2]+2);//local matrix including ghost plains
@@ -86,10 +89,11 @@ int main (int argc, char **argv)
 	center[2] = round(double(dims[2])/2.0)-1;
 	int centerrank;
 	MPI_Cart_rank(Comm_Cart,center,&centerrank);
+	/*
 	if(rank==0){
 		cout << "the center rank is: " << centerrank << endl;
 		cout << "center: " << center[0] << "\t" << center[1] << "\t" << center[2] << endl;
-	}
+	}*/
 
 	//generate initial local matrizes without ghost cells
 	for (int k=1; k<=n[2]; ++k) {
@@ -102,11 +106,13 @@ int main (int argc, char **argv)
 	}
 
 	//print initial matrix settup
+	/*
 	if (rank==0) cout << "Initial Matrices :" << endl;
 	print_matrices(u, size, rank);
+	*/
 
 	MPI_Barrier( MPI_COMM_WORLD );
-	if(rank==0) cout << "local Matrix creation done" << endl;
+	//if(rank==0) cout << "local Matrix creation done" << endl;
 
 	//MPI TYPES AND STUFF--------------------------
 	//send left and right
@@ -172,8 +178,8 @@ int main (int argc, char **argv)
 
 	u_old = u;
 
-	if (rank==0) cout << "Initial Matrices after ghost cell shifting :" << endl;
-	print_matrices(u, size, rank);
+	//if (rank==0) cout << "Initial Matrices after ghost cell shifting :" << endl;
+	//print_matrices(u, size, rank);
 	//print_matrices(u_old, size, rank);
 
 
@@ -224,8 +230,9 @@ int main (int argc, char **argv)
 
 
 	for (int t=0; t<t_max; ++t){
+		if (rank == 0) cout << "timestep " << t << endl;
 
-		if(t<10 || t%print==0){
+		if(0 && (t<10 || t%print==0)){
 
 			//compute global heat values for output
 			//local vectors per local matrix
