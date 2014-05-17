@@ -25,8 +25,9 @@ int main (int argc, char **argv)
 	//-------------driver params----------------------------
 	int world_dim=3;
 	int dims[3]={0,0,0};
-	int N = 50; //target global number of DOFS in each direction
-	int N_new; //global number of DOFS in each direction after rounding 
+	int N = atoi(argv[1]); //target global number of DOFS in each direction
+	int N_new; //total global number of DOFS after rounding
+	int N_x, N_y, N_z; //DOFS per direction after rounding
 	double L = 1.; //edgelength of simulated cube
 	vector<double> dx(3,0); //discrete spacing in each direction
 	vector<double> n(3,0); //local number of DOFS in x,y,z direction
@@ -62,12 +63,12 @@ int main (int argc, char **argv)
 	MPI_Cart_shift(Comm_Cart, 1, 1, &front, &back);
 
 	//uncomment for testing neighbor distribution
-	/*
+	
 	std::cout <<  "Rank " << rank << " has new rank " << newrank << " and neighbors " 
 		<< left << ", " << right << ", "
 		<< top << ", " << bottom << ", "
 		<< front << ", " << back << std::endl;
-	*/
+	
 
 	//compute (local) sizes and offsets:
 	for (int i=0; i<world_dim; ++i){ //compute local matrix setting
@@ -75,6 +76,11 @@ int main (int argc, char **argv)
 		dx[i]=L/(n[i]*dims[i]);
 	}
 	N_new = n[0]*n[1]*n[2]*size; //round up N
+	N_x = n[0]*dims[0];
+	N_y = n[1]*dims[1];
+	N_z = n[2]*dims[2];
+
+	
 	if (rank ==0) cout << "n_new:= " << N_new << endl;
 
 	matrix<double> u(n[0]+2,n[1]+2,n[2]+2); //local matrix including ghost plains
@@ -89,11 +95,11 @@ int main (int argc, char **argv)
 	center[2] = round(double(dims[2])/2.0)-1;
 	int centerrank;
 	MPI_Cart_rank(Comm_Cart,center,&centerrank);
-	/*
+	
 	if(rank==0){
 		cout << "the center rank is: " << centerrank << endl;
 		cout << "center: " << center[0] << "\t" << center[1] << "\t" << center[2] << endl;
-	}*/
+	}
 
 	//generate initial local matrizes without ghost cells
 	for (int k=1; k<=n[2]; ++k) {
@@ -203,7 +209,16 @@ int main (int argc, char **argv)
 	double offsetx, offsety, offsetz;
 	offsetx = mycoords[0]*(n[0])*dx[0];
 	offsety = mycoords[1]*(n[1])*dx[1];
-	offsetz = mycoords[2]*(n[2])*dx[2];
+	offsetz = (dims[2]-1-mycoords[2])*(n[2])*dx[2];
+
+	for(unsigned i=0; i< size; i++){
+		if(i==rank){
+			cout << "i am rank " << rank << endl;
+			cout << "my local offsets are: " << offsetx << "\t" << offsety << "\t" << offsetz << endl;
+		}
+	MPI_Barrier( MPI_COMM_WORLD);
+	}
+		
 
 	//compute global x,y,z values for each process
 	int cnt=0;
@@ -232,7 +247,7 @@ int main (int argc, char **argv)
 	for (int t=0; t<t_max; ++t){
 		if (rank == 0) cout << "timestep " << t << endl;
 
-		if(0 && (t<10 || t%print==0)){
+		if(t%print==0){
 
 			//compute global heat values for output
 			//local vectors per local matrix
@@ -264,7 +279,7 @@ int main (int argc, char **argv)
 			if(rank==0) cout << "finished gathering at timestep :" << t << endl;
 
 
-			if (rank ==0) write_3d(dxvals, dyvals, dzvals, fvals, print_counter);
+			if (rank ==0) write_3d(dxvals, dyvals, dzvals, fvals, print_counter,N_x, N_y, N_z);
 			print_counter++;
 			//Gather all the local data into global data for printing the solution
 			if(rank==0) cout << "print finished at timestep :" << t << endl;
@@ -283,7 +298,7 @@ int main (int argc, char **argv)
 				for(double k=1; k<=(n[2]); k++){
 					f=1./dx[0]*(-2.*u(i,j,k)+u(i+1,j,k)+u(i-1,j,k));
 					f+=1./dx[1]*(-2.*u(i,j,k)+u(i,j+1,k)+u(i,j-1,k));
-					f+=1./dx[2]*(-2.*u(i,j,k)+u(i,j,k+1)+u(i,j,k+1));
+					f+=1./dx[2]*(-2.*u(i,j,k)+u(i,j,k+1)+u(i,j,k-1));
 					//cout << "f = " << f << endl; 
 					u_old(i,j,k)=u(i,j,k)+dt*f;						
 				}
