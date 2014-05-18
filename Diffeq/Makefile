@@ -1,17 +1,21 @@
 COMPILER 	= mpiCC
 OPTI		= -O3
 OMP			= -fopenmp
-HEADERS		= aligned_allocator.hpp 3dhpcmatrix.hpp vtk_writer.hpp
+HEADERS		= aligned_allocator.hpp 3dhpcmatrix.hpp vtk_writer.hpp output.hpp
 
-all: correctness benchmark
+all: final
 
-correctness: diffusion.cpp $(HEADERS)
-	$(COMPILER) $(OPTI) diffusion.cpp -o correctness.out
+final: diffusion_final.cpp timer.cpp timer.h $(HEADERS)
+	$(COMPILER) $(OMP) $(OPTI) diffusion_final.cpp timer.cpp -o diffusion.out
 
-benchmark: diffusion_timing.cpp timer.cpp $(HEADERS)
-	$(COMPILER) $(OPTI) diffusion_timing.cpp timer.cpp -o benchmark.out
 
-testcases: hybrid_t matrix_t mpi_t vtk_t
+testcases: hybrid_t matrix_t mpi_t vtk_t correctness_t benchmark_t
+
+correctness_t: testcases/diffusion.cpp $(HEADERS)
+	$(COMPILER) $(OPTI) testcases/diffusion.cpp -o testcases/correctness.out
+
+benchmark_t: testcases/diffusion_timing.cpp timer.cpp timer.h $(HEADERS)
+	$(COMPILER) $(OPTI) testcases/diffusion_timing.cpp timer.cpp -o testcases/benchmark.out
 
 hybrid_t: testcases/diffusion_hybrid_test.cpp testcases/hybrid_test.cpp $(HEADERS)
 	$(COMPILER) $(OMP) $(OPTI) testcases/hybrid_test.cpp -o testcases/hybr_vector.out
@@ -29,11 +33,13 @@ vtk_t:testcases/test_vtk.cpp $(HEADERS)
 	$(COMPILER) $(OPTI) testcases/test_vtk.cpp -o testcases/test_vtk.out
 
 out_clean:
-	rm output/*
-	rm testcases/output/*
+	rm -f output/*
+	rm -f testcases/output/*
+	rm -f *.csv
 	
 clean:
-	rm *.out
-	rm testcases/*.out
-	rm output/*
-	rm testcases/output/*
+	rm -f *.out
+	rm -f testcases/*.out
+	rm -f output/*
+	rm -f testcases/output/*
+	rm -f *.csv
