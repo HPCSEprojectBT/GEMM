@@ -48,8 +48,8 @@ int main (int argc, char **argv)
 	MPI_Status status;
 	MPI_Comm_size(MPI_COMM_WORLD,&size);
 	MPI_Comm_rank(MPI_COMM_WORLD,&rank);
-	sprintf(timing_filename, "./timing_np_%d.out",size);
-	ofstream timing_out(timing_filename);
+	sprintf(timing_filename, "./timing.out");
+	ofstream timing_out(timing_filename, ios::app);
 
 	MPI_Comm Comm_Cart; //communicator with topology
 	MPI_Dims_create(size,world_dim,dims); //fills the dims array automatically
@@ -120,7 +120,9 @@ int main (int argc, char **argv)
 	//----------------------------do several runs from here on -------------------------
 	//==================================================================================
 
+	if (rank==0) timing_out << size << "\t" << N_new << "\t";
 	for (int run=0; run<max_runs; run++) {
+		if (rank==0) cout << "performing run " << run << endl;
 		//generate initial local matrizes without ghost cells
 		for (int k=1; k<=n[2]; ++k) {
 			for (int j=1; j<=n[1]; ++j) {
@@ -231,13 +233,14 @@ int main (int argc, char **argv)
 		offsety = mycoords[1]*(n[1])*dx[1];
 		offsetz = (dims[2]-1-mycoords[2])*(n[2])*dx[2];
 
+		/*
 		for(unsigned i=0; i< size; i++){
 			if(i==rank){
 				cout << "i am rank " << rank << endl;
 				cout << "my local offsets are: " << offsetx << "\t" << offsety << "\t" << offsetz << endl;
 			}
 			MPI_Barrier( MPI_COMM_WORLD);
-		}
+		}*/
 
 
 		//compute global x,y,z values for each process
@@ -263,8 +266,8 @@ int main (int argc, char **argv)
 		vector<double> dzvals(N_new);
 		vector<double> fvals(N_new);
 
-
-		T.tic(); //start timing
+		MPI_Barrier(MPI_COMM_WORLD);
+		if (rank==0) T.tic(); //start timing
 		for (int t=0; t<t_max; ++t){
 			//if (rank == 0) cout << "timestep " << t << endl;
 
@@ -365,8 +368,13 @@ int main (int argc, char **argv)
 					Comm_Cart, &status);
 
 		}
-		timing_out <<run << "," << T.toc() << endl;
+		MPI_Barrier(MPI_COMM_WORLD);
+		if (rank==0){
+			timing_out << T.toc();		
+			if (run < max_runs -1 ) timing_out << "\t";
+		}
 	}
+	if (rank==0) timing_out << endl;
 
 	MPI_Finalize();
 
