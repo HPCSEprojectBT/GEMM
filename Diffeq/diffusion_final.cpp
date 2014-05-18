@@ -171,7 +171,8 @@ int main (int argc, char** argv)
 	Timer T;
 
 	//sprintf(timing_filename, filename);
-	ofstream timing_out(timing_filename, ios::app);
+	ofstream timing_out;
+	if(rank==0) timing_out.open(timing_filename, ios::app);
 
 
 	MPI_Comm Comm_Cart; //communicator with topology
@@ -442,6 +443,9 @@ int main (int argc, char** argv)
 			if (run < max_runs -1 ) timing_out << "\t";
 		}		
 	}
-	if (rank==0) timing_out << endl;
+	if (rank==0) {
+		timing_out << endl;
+		timing_out.close();
+	}
 	MPI_Finalize();
 }
