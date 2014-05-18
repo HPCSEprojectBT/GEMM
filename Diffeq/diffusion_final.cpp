@@ -7,7 +7,7 @@
 #include "timer.h"
 #include "output.hpp"
 
-#define _print_results
+//#define _print_results
 
 using namespace std;
 
@@ -17,6 +17,7 @@ unsigned N; //target global number of DOFS in each direction
 unsigned num_threads; //opmp threads used per rank
 bool print_results;
 bool non_blocking_communication;
+char timing_filename[160];
 
 double init_heat = 777777776;
 int print = 1000;
@@ -125,9 +126,20 @@ int main (int argc, char** argv)
 {
 	//get input arguments
 	if (argc < 6) {
-		cout << "usage: mpirun -np <num_nodes> " << argv[0] << " dofs_per_site num_timesteps num_runs omp_threads_per_node nonblocking " << endl;
+		cout << "usage: mpirun -np <num_nodes> " << argv[0] << " dofs_per_site num_timesteps num_runs omp_threads_per_node nonblocking out_number " << endl;
 		return 1;
 	}
+	if (argc == 6) {
+		N = atoi(argv[1]);
+		t_max = atoi(argv[2]);
+		max_runs = atoi(argv[3]);
+		num_threads = atoi(argv[4]);
+		if(num_threads<=16) omp_set_num_threads(num_threads);
+		else omp_set_num_threads(16);
+		non_blocking_communication = atoi(argv[5]);
+		sprintf(timing_filename,"timing.csv");
+	}
+	
 	else {
 		N = atoi(argv[1]);
 		t_max = atoi(argv[2]);
@@ -136,6 +148,7 @@ int main (int argc, char** argv)
 		if(num_threads<=16) omp_set_num_threads(num_threads);
 		else omp_set_num_threads(16);
 		non_blocking_communication = atoi(argv[5]);
+		sprintf(timing_filename,"timing_%d.csv",atoi(argv[6]));
 	}
 
 	//MPI Init and CartComm creationy
@@ -154,10 +167,10 @@ int main (int argc, char** argv)
 	vector<double> dx(3,0); //discrete spacing in each direction
 	vector<double> n(3,0); //local number of DOFS in x,y,z direction
 	int local_dofs; //number of local dofs per matrix
-	char timing_filename[160];
+	//char timing_filename[160];
 	Timer T;
 
-	sprintf(timing_filename, "./timing.out");
+	//sprintf(timing_filename, filename);
 	ofstream timing_out(timing_filename, ios::app);
 
 
