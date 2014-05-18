@@ -117,7 +117,7 @@ int main (int argc, char **argv)
 	print_matrices(u, size, rank);
 	*/
 
-	MPI_Barrier( MPI_COMM_WORLD );
+	//MPI_Barrier( MPI_COMM_WORLD );
 	//if(rank==0) cout << "local Matrix creation done" << endl;
 
 	//MPI TYPES AND STUFF--------------------------
