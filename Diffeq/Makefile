@@ -28,8 +28,12 @@ mpi_t: testcases/mpi_coords_test.cpp testcases/mpi_vectors_testcase.cpp $(HEADER
 vtk_t:testcases/test_vtk.cpp $(HEADERS)
 	$(COMPILER) $(OPTI) testcases/test_vtk.cpp -o testcases/test_vtk.out
 
+out_clean:
+	rm output/*
+	rm testcases/output/*
 	
 clean:
 	rm *.out
 	rm testcases/*.out
 	rm output/*
+	rm testcases/output/*
