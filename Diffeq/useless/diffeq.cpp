@@ -7,7 +7,6 @@ diffeq::diffeq(size_t N_,int scheme_)
 
 void diffeq::timestep()
 {
-	cout << "hoi" << endl;
 	int next;
 	if(current==0){
 		next=1;
