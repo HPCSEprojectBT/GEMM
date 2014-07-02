@@ -42,7 +42,7 @@ void print_offsets(int rank,int size, double offsetx, double offsety, double off
 }
 
 
-void stepcount(int iterations, int rank){
+void print_stepcount(int iterations, int rank){
 	MPI_Barrier( MPI_COMM_WORLD);
 	if(rank==0){
 		cout << "\n\n\n" << "Starting new step (" << iterations << ")" << endl << endl;
@@ -173,6 +173,20 @@ void print_solution(vector<int> & sizes_new, vector<int> & local_sizes, MPI_Data
 	gather_Matrix(c_sizes, c_sizes_local, 0, C_Block_Type, C, rank, size, Comm_Cart, "C");
 
 }
+
+void print_matrix_distribution(int rank, int size, MatrixXd & A_loc, MatrixXd & A_glob) {
+    //print matrix destribution
+        for (int i=0; i<size; ++i) {
+                MPI_Barrier(MPI_COMM_WORLD);
+                if (rank==i) {
+                        if(rank ==0) cout <<"A_glob = " << endl << A_glob << endl;
+                        cout << "Rank " << rank << " stores A=" << endl;
+                        cout << A_loc << endl;
+                }
+        }
+} 
+
+
 
 
 

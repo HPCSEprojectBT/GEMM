@@ -5,15 +5,21 @@
 #include <vector>
 #include <assert.h> 
 
-#define PRINT_DEBUG
+//#define PRINT_DEBUG
 
 using namespace std;
 using Eigen::MatrixXd;
 
+const int n = 6; //x and y Dimension of A,B and C
+MPI_Datatype A_Block_Type, B_Block_Type, cont_type;
+int lr_tag = 7;
+int bt_tag = 77;
+
 #include "timer.h"
 #include "output.hpp"
+#include "matrix_setup.hpp"
 
-const int n = 6; //x and y Dimension of A,B and C
+
 
 int main (int argc, char** argv)
 {
@@ -24,15 +30,33 @@ int main (int argc, char** argv)
 	MPI_Comm_size(MPI_COMM_WORLD,&size);
 	MPI_Comm_rank(MPI_COMM_WORLD,&rank);
 	double m = sqrt(size);
+	//////////////////////////////added
+	int number_of_steps = m;
 	assert((n%(int)m)== 0) ;//n has to be a multiple of sqrt(n_procs)
+
 
 	MatrixXd A_glob(n,n);
 	MatrixXd B_glob(n,n);
 	MatrixXd C_glob(n,n);
-	int n_loc = n/sqrt(size);
+	////////////////////////////// Do div by m
+	int n_loc = n/m;
 	MatrixXd A_loc(n_loc,n_loc);
 	MatrixXd B_loc(n_loc,n_loc);
 	MatrixXd C_loc(n_loc,n_loc);
+	MatrixXd A_loc_tmp(n_loc,n_loc);
+	MatrixXd B_loc_tmp(n_loc,n_loc);
+	MatrixXd C_step(n_loc,n_loc);
+
+	MatrixXd C_correct(n,n);
+
+	MPI_Type_contiguous(n_loc*n_loc,MPI_DOUBLE, &A_Block_Type); //prepare type for bottom/top sends
+	MPI_Type_commit(&A_Block_Type);
+	MPI_Type_contiguous(n_loc*n_loc,MPI_DOUBLE, &B_Block_Type); //prepare type for bottom/top sends
+	MPI_Type_commit(&B_Block_Type);
+	MPI_Type_contiguous(n_loc*n_loc,MPI_DOUBLE, & cont_type);
+    MPI_Type_commit(&cont_type); 
+
+
 
 	//create cartesian grid topology
 	int dims[2] = {0,0};
@@ -50,43 +74,98 @@ int main (int argc, char** argv)
 	MPI_Cart_shift(Comm_Cart, 1, 1, &left, &right);
 
 	#ifdef PRINT_DEBUG
-	print_neighbours(rank, left, right, top, bottom);
-	cout << "Global Rank " << rank <<" has cart rank " <<cart_rank << "and cartesian coordinates (" << mycoords[0] << "," << mycoords[1] <<")" << endl; 
+	print_neighbours(rank, left, right, top, bottom, size);
+	//////////////7 added
+	print_coordiantes(mycoords, rank, cart_rank, size);
 	#endif
 
 	//create initial global matrices
 	double val = 1;
 	for (int j=0; j<n ; ++j) {
-		for (int i=0; i<n; ++i) {
-			A_glob(i,j)=val;
-			B_glob(i,j)=100*val;
-			val++;
-		}
+	        for (int i=0; i<n; ++i) {
+	                A_glob(i,j)=val;
+	                B_glob(i,j)=100*val;
+	                val++;
+	        }
+	} 
+
+	if(rank == 0){
+
+		C_correct = A_glob*B_glob;
 	}
 
-	//distribute global matrices over the ranks
-	MPI_Datatype block_type, cont_type;
-	MPI_Type_vector(n_loc,n_loc,n_loc*dims[0],MPI_DOUBLE, & block_type);
-	MPI_Type_contiguous(n_loc*n_loc,MPI_DOUBLE, & cont_type);
-	MPI_Datatype cont2_type;
-	MPI_Type_contiguous(n_loc,MPI_DOUBLE, & cont2_type);
+	scatter_matrix(rank,m,n_loc, A_glob, A_loc, Comm_Cart, status);
+    if (rank == 0) cout <<"after scatter: \n\n";
+
+
+    print_matrix_distribution(rank, size, A_loc, A_glob);
+
+
+    scatter_matrix(rank,m,n_loc, B_glob, B_loc, Comm_Cart, status);
+    if (rank == 0) cout <<"after scatter: \n\n";
+
+    print_matrix_distribution(rank, size, B_loc, B_glob);
+
+	// Initialisation of the matrix
+	for(int i=0; i< n_loc ; i++)
+		for(int j=0; j < n_loc; j++){
+			C_step(i,j)=0;
+			C_loc(i,j) =0;
+		}
+
+
+	// for(int i=0; i< n_loc ; i++)
+	// 	for(int j=0; j < n_loc; j++){
+	// 		B_loc(i,j) = rank;
+	// 	}
+
+	initial_send(Comm_Cart,rank,A_loc_tmp,A_loc,B_loc_tmp,B_loc,status, size);
+	A_loc_tmp.swap(A_loc);
+	B_loc_tmp.swap(B_loc);
 	
+#ifdef PRINT_DEBUG	
+	print_abc(A_loc,B_loc, C_step, size, rank);
+#endif
 
-	MPI_Type_commit(&block_type);
-	MPI_Type_commit(&cont_type);
+	// Doing the actual cannon's alogrithm
+	for(int iterations=0; iterations < number_of_steps; ++iterations){
+		print_stepcount(iterations, rank);
+		C_step = A_loc*B_loc;
+		C_loc = C_loc + C_step;
+#ifdef PRINT_DEBUG
+		print_abc(A_loc,B_loc, C_step, size, rank);
+#endif		
 
-	MPI_Scatter(&A_glob.block(0,0,2,2).data()[0],1,cont_type,&A_loc.data()[0],1,cont_type,0,Comm_Cart);
-	for (int i=0; i<size; ++i) {
 		MPI_Barrier(MPI_COMM_WORLD);
-		if (rank==i) {
-			if(rank ==0) cout <<"A_glob = " << endl << A_glob << endl;
-			cout << "Rank " << rank << " stores A=" << endl;
-			cout << A_loc << endl;
-		}
+
+		// Sends to the left, recieve from right
+		MPI_Sendrecv(&A_loc.data()[0],1, A_Block_Type,left, lr_tag,
+			&A_loc_tmp.data()[0],1, A_Block_Type, right, lr_tag,
+			Comm_Cart, &status);
+
+		// Sends to the top, recieve from bot
+		MPI_Sendrecv(&B_loc.data()[0],1, B_Block_Type,top, bt_tag,
+			&B_loc_tmp.data()[0],1, B_Block_Type, bottom, bt_tag,
+			Comm_Cart, &status);
 	
+		A_loc_tmp.swap(A_loc);
+		B_loc_tmp.swap(B_loc);
+
 	}
 
+
+
+	gather_matrix(rank,m,n_loc, C_glob, C_loc, Comm_Cart, status);
+
+	if(rank == 0){
+		cout << "Correct c is:\n";
+		cout << C_correct << endl;
+	}
+    if (rank == 0) cout <<"after gather: \n\n";
+    print_matrix_distribution(rank, size, C_loc, C_glob);
+
 	
+
 
 
 	MPI_Finalize();
