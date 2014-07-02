@@ -8,14 +8,18 @@ void print_cartesian_dims(int * dims, int rank, int print_rank = 0)
 	}
 }
 
-void print_neighbours(int rank, int left, int right, int top, int bottom)
+void print_neighbours(int rank, int left, int right, int top, int bottom, int size)
 {
 	MPI_Barrier( MPI_COMM_WORLD);
-	std::cout <<  "Rank " << rank  << " has neighbours (l,r,t,b) " 
-		<< left << ", " << right << ", "
-		<< top << ", " << bottom
-		<< std::endl;	
-	MPI_Barrier( MPI_COMM_WORLD);
+	for(unsigned i=0; i< size; i++){
+		if(i==rank){
+		std::cout <<  "Rank " << rank  << " has neighbours (l,r,t,b) " 
+			<< left << ", " << right << ", "
+			<< top << ", " << bottom
+			<< std::endl;	
+		}
+		MPI_Barrier( MPI_COMM_WORLD);
+	}	
 }
 
 void print_center(int rank, int * center,int centerrank, int print_rank=0)
@@ -56,7 +60,7 @@ void print_abc(MatrixXd &A,MatrixXd &B, MatrixXd &C_step, int size, int rank){
 			cout << "my C Matrix is: " << endl << C_step << endl;
 		}
 		MPI_Barrier( MPI_COMM_WORLD);
-		}
+	}
 }
 
 void print_sizes(vector<int> & sizes, vector<int> & sizes_new, vector<int> & local_sizes,int rank){
@@ -72,6 +76,16 @@ void print_sizes(vector<int> & sizes, vector<int> & sizes_new, vector<int> & loc
 		cout << local_sizes[1]  << "\t" << local_sizes[1]  << "x" << local_sizes[2] << endl;
 	}
 	MPI_Barrier( MPI_COMM_WORLD);
+}
+
+void print_coordiantes(int * mycoords, int rank, int cart_rank, int size){
+	for(unsigned i=0; i< size; i++){
+		MPI_Barrier( MPI_COMM_WORLD);
+		if(i==rank){
+			cout << "Global Rank " << rank <<" has cart rank " <<cart_rank << "and cartesian coordinates (" << mycoords[0] << "," << mycoords[1] <<")" << endl; 
+		}
+		MPI_Barrier( MPI_COMM_WORLD);
+	}
 }
 
 void print_solutions_easy(int * mycoords, int * dims, MatrixXd &C,int rank){
