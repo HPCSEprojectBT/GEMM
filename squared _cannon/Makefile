@@ -2,7 +2,7 @@ COMPILER 	= mpiCC
 OPTI		= -O3
 OMP			= -fopenmp
 LOAD_EIGEN	= -I ~/my_libs/EIGEN
-HEADERS		= output.hpp
+HEADERS		= output.hpp matrix_setup.hpp
 
 #final
 all: cannon

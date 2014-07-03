@@ -25,8 +25,8 @@ io_t_wrong: print_test.cpp $(HEADERS)
 both: ohnebeni.cpp $(HEADERS) timer.cpp timer.h
 	$(COMPILER) $(LOAD_EIGEN) ohnebeni.cpp timer.cpp timer.h -o testmult.out
 
-cannon: clean_correct_cannon.cpp $(HEADERS) timer.cpp timer.h
-	$(COMPILER) $(LOAD_EIGEN) clean_correct_cannon.cpp timer.cpp timer.h -o cannon.out
+cannon: cannon_square.cpp $(HEADERS) timer.cpp timer.h
+	$(COMPILER) $(LOAD_EIGEN) cannon_square.cpp timer.cpp timer.h -o cannon.out
 clean:
 	rm -f *.out
 
