@@ -161,8 +161,20 @@ int main (int argc, char** argv)
 	// 		C_step[i][j] =0;
 	// 		C_loc[i][j]  =0;
 	// 	}
+
 	scatter_matrix(rank,m,n_loc, A_glob, A_loc, Comm_Cart, status);
 	scatter_matrix(rank,m,n_loc, B_glob, B_loc, Comm_Cart, status);
+
+	/*
+	if (rank==0) cout << "after scattering A matrix" << endl;
+	print_matrix_distribution(rank, size, A_loc, A_glob, n_loc, n);
+	
+	gather_matrix(rank,m,n_loc, A_glob, A_loc, Comm_Cart, status);
+
+	if (rank==0) cout << "after gathering the same damn matrix" << endl;
+	print_matrix_distribution(rank, size, A_loc, A_glob, n_loc, n);
+	*/
+	
 	// Initialisation of the matrix
 	for(int i=0; i< n_loc ; i++){
 		for(int j=0; j < n_loc; j++){
@@ -175,6 +187,10 @@ int main (int argc, char** argv)
 	initial_send(Comm_Cart,rank,A_loc_tmp,A_loc,B_loc_tmp,B_loc,status, size,n_loc);
 	swap(A_loc,A_loc_tmp);
 	swap(B_loc,B_loc_tmp);
+	
+	//print_abc(A_loc,B_loc,C_step,size,rank, n_loc);
+	// initial distirbution correct!
+	
 
 
 
@@ -210,10 +226,10 @@ int main (int argc, char** argv)
 		//send_matrices_blocking(status, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom, n_loc);
 		
 		if(!non_blocking){
-			send_matrices_blocking(status, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom, n_loc);
+			send_matrices_blocking(status,  A_loc_tmp, A_loc, B_loc_tmp,B_loc, Comm_Cart, left, right, top, bottom, n_loc);
 		}
 		else{
-			send_matrices_non_blocking(mycoords, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom, n_loc);
+			send_matrices_non_blocking(mycoords,  A_loc_tmp, A_loc,B_loc_tmp,B_loc,  Comm_Cart, left, right, top, bottom, n_loc);
 			if(rank == 0){
 				cout << "system.out.println(fak this)" << endl;
 			}
@@ -233,6 +249,7 @@ int main (int argc, char** argv)
 	// }
     if (rank == 0) cout <<"after gather: \n\n";
     print_matrix_distribution(rank, size, C_loc, C_glob, n_loc, n);
+	print_coordiantes(mycoords, rank, rank, size);
 
 
 

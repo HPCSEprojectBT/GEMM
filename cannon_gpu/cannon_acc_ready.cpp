@@ -152,10 +152,10 @@ int main (int argc, char** argv)
 		//send_matrices_blocking(status, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom, n_loc);
 		
 		if(!non_blocking){
-			send_matrices_blocking(status, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom, n_loc);
+			send_matrices_blocking(status, A_loc_tmp, A_loc, B_loc_tmp, B_loc,  Comm_Cart, left, right, top, bottom, n_loc);
 		}
 		else{
-			send_matrices_non_blocking(mycoords, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom, n_loc);
+			send_matrices_non_blocking(mycoords, A_loc_tmp, A_loc,  B_loc_tmp, B_loc,  Comm_Cart, left, right, top, bottom, n_loc);
 			if(rank == 0){
 				cout << "system.out.println(fak this)" << endl;
 			}

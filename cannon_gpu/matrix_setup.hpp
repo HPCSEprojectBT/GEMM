@@ -56,7 +56,7 @@ void gather_matrix(int rank, int m, int n_loc, float** A_glob,  float** A_loc, M
 		float** A_temp;
 		A_temp = alloc_2d_init(n_loc,n_loc);
 		float *recvptr;
-		recvptr = &(A_loc[0][0]);
+		recvptr = &(A_temp[0][0]);
 		for (int i=0; i<m; ++i){
 			for (int j=0; j<m; ++j) {
 				int send_coords[2]={i,j};
