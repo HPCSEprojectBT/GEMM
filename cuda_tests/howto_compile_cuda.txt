@@ -1,0 +1,4 @@
+nvcc -c gemm.cu
+CC -o gemm.x main.cpp gemm.o
+sbatch batch_cuda.txt 
+
