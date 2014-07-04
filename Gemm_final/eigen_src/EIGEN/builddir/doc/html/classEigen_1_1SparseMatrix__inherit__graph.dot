@@ -1,0 +1,10 @@
+digraph "SparseMatrix&lt; _Scalar, _Options, _Index &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{SparseMatrix\< _Scalar,\l _Options, _Index \>\n|# m_data\l# m_innerNonZeros\l# m_innerSize\l# m_outerIndex\l# m_outerSize\l|+ coeff()\l+ coeffRef()\l+ cols()\l+ conservativeResize()\l+ data()\l+ data()\l+ diagonal()\l+ finalize()\l+ innerIndexPtr()\l+ innerIndexPtr()\land 41 more...\l# initAssignment()\l# innerNonZeros()\l# innerNonZeros()\l# insertCompressed()\l# insertUncompressed()\l# reserveInnerVectors()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{SparseMatrixBase\< Sparse\lMatrix\< _Scalar, _Options,\l _Index \> \>\n|# m_isRValue\l|+ adjoint()\l+ binaryExpr()\l+ block()\l+ block()\l+ block()\l+ block()\l+ block()\l+ block()\l+ blueNorm()\l+ bottomLeftCorner()\land 135 more...\l# assign()\l# assignGeneric()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1SparseMatrixBase.html"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node3 [label="{EigenBase\< SparseMatrix\l\< _Scalar, _Options, \l_Index \> \>\n||+ addTo()\l+ applyThisOnTheLeft()\l+ applyThisOnTheRight()\l+ cols()\l+ const_cast_derived()\l+ const_derived()\l+ derived()\l+ derived()\l+ evalTo()\l+ rows()\l+ size()\l+ subTo()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structEigen_1_1EigenBase.html"];
+}

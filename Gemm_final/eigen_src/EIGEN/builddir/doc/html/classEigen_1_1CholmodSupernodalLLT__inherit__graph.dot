@@ -1,0 +1,8 @@
+digraph "CholmodSupernodalLLT&lt; _MatrixType, _UpLo &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{CholmodSupernodalLLT\l\< _MatrixType, _UpLo \>\n||+ CholmodSupernodalLLT()\l+ CholmodSupernodalLLT()\l+ ~CholmodSupernodalLLT()\l# init()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{CholmodBase\< _MatrixType,\l _UpLo, CholmodSupernodalLLT\l\< _MatrixType, _UpLo \> \>\n|# m_analysisIsOk\l# m_cholmod\l# m_cholmodFactor\l# m_factorizationIsOk\l# m_info\l# m_isInitialized\l# m_shiftOffset\l|+ analyzePattern()\l+ cholmod()\l+ CholmodBase()\l+ CholmodBase()\l+ cols()\l+ compute()\l+ derived()\l+ derived()\l+ dumpMemory()\l+ factorize()\land 6 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1CholmodBase.html"];
+}

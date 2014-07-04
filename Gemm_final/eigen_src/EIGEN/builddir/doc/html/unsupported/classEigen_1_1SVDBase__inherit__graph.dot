@@ -1,0 +1,10 @@
+digraph "SVDBase&lt; _MatrixType &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{SVDBase\< _MatrixType \>\n|# m_cols\l# m_computationOptions\l# m_computeFullU\l# m_computeFullV\l# m_computeThinU\l# m_computeThinV\l# m_diagSize\l# m_isAllocated\l# m_isInitialized\l# m_matrixU\l# m_matrixV\l# m_nonzeroSingularValues\l# m_rows\l# m_singularValues\l|+ cols()\l+ compute()\l+ compute()\l+ computeU()\l+ computeV()\l+ matrixU()\l+ matrixV()\l+ nonzeroSingularValues()\l+ rows()\l+ singularValues()\l# allocate()\l# SVDBase()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{BDCSVD\< _MatrixType \>\n|# algoswap\l# compU\l# compV\l# isTranspose\l# m_computed\l# m_naiveU\l# m_naiveV\l# nRec\l|+ BDCSVD()\l+ BDCSVD()\l+ BDCSVD()\l+ compute()\l+ compute()\l+ compute()\l+ matrixU()\l+ matrixV()\l+ setSwitchSize()\l+ solve()\l+ ~BDCSVD()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1BDCSVD.html",tooltip="class Bidiagonal Divide and Conquer SVD "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node3 [label="{JacobiSVD\< _MatrixType \>\n|# m_qr_precond_morecols\l# m_qr_precond_morerows\l# m_workMatrix\l|+ compute()\l+ compute()\l+ JacobiSVD()\l+ JacobiSVD()\l+ JacobiSVD()\l+ solve()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1JacobiSVD.html",tooltip="Two-sided Jacobi SVD decomposition of a rectangular matrix. "];
+}

@@ -1,0 +1,14 @@
+digraph "DenseCoeffsBase&lt; Derived, ReadOnlyAccessors &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{DenseCoeffsBase\< Derived,\l ReadOnlyAccessors \>\n||+ coeff()\l+ coeff()\l+ coeffByOuterInner()\l+ colIndexByOuterInner()\l+ operator()()\l+ operator()()\l+ operator[]()\l+ packet()\l+ packet()\l+ packetByOuterInner()\l+ rowIndexByOuterInner()\l+ w()\l+ x()\l+ y()\l+ z()\l# coeffRef()\l# coeffRefByOuterInner()\l# colStride()\l# copyCoeff()\l# copyCoeffByOuterInner()\l# copyPacket()\l# copyPacketByOuterInner()\l# innerStride()\l# outerStride()\l# rowStride()\l# stride()\l# writePacket()\l# writePacketByOuterInner()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{EigenBase\< Derived \>\n||+ addTo()\l+ applyThisOnTheLeft()\l+ applyThisOnTheRight()\l+ cols()\l+ const_cast_derived()\l+ const_derived()\l+ derived()\l+ derived()\l+ evalTo()\l+ rows()\l+ size()\l+ subTo()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structEigen_1_1EigenBase.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node3 [label="{DenseCoeffsBase\< Derived,\l DirectAccessors \>\n||+ colStride()\l+ innerStride()\l+ outerStride()\l+ rowStride()\l+ stride()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1DenseCoeffsBase_3_01Derived_00_01DirectAccessors_01_4.html",tooltip="Base class providing direct read-only coefficient access to matrices and arrays. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node4 [label="{DenseCoeffsBase\< Derived,\l WriteAccessors \>\n||+ coeffRef()\l+ coeffRef()\l+ coeffRefByOuterInner()\l+ operator()()\l+ operator()()\l+ operator[]()\l+ w()\l+ writePacket()\l+ writePacket()\l+ writePacketByOuterInner()\l+ x()\l+ y()\l+ z()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1DenseCoeffsBase_3_01Derived_00_01WriteAccessors_01_4.html",tooltip="Base class providing read/write coefficient access to matrices and arrays. "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node5 [label="{DenseCoeffsBase\< Derived,\l DirectWriteAccessors \>\n||+ colStride()\l+ innerStride()\l+ outerStride()\l+ rowStride()\l+ stride()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1DenseCoeffsBase_3_01Derived_00_01DirectWriteAccessors_01_4.html",tooltip="Base class providing direct read/write coefficient access to matrices and arrays. ..."];
+}

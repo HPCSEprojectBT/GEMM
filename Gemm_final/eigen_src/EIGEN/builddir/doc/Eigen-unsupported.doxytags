@@ -1,0 +1,2377 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="group">
+    <name>AdolcForward_Module</name>
+    <title>Adolc forward module</title>
+    <filename>group__AdolcForward__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>AlignedVector3_Module</name>
+    <title>Aligned vector3 module</title>
+    <filename>group__AlignedVector3__Module.html</filename>
+    <class kind="class">Eigen::AlignedVector3</class>
+  </compound>
+  <compound kind="group">
+    <name>ArpackSupport_Module</name>
+    <title>Arpack support module</title>
+    <filename>group__ArpackSupport__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>AutoDiff_Module</name>
+    <title>Auto Diff module</title>
+    <filename>group__AutoDiff__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>BVH_Module</name>
+    <title>BVH module</title>
+    <filename>group__BVH__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>FFT_Module</name>
+    <title>Fast Fourier Transform module</title>
+    <filename>group__FFT__Module.html</filename>
+    <docanchor file="group__FFT__Module" title="Design">FFTDesign</docanchor>
+  </compound>
+  <compound kind="group">
+    <name>IterativeSolvers_Module</name>
+    <title>Iterative solvers module</title>
+    <filename>group__IterativeSolvers__Module.html</filename>
+    <namespace>Eigen</namespace>
+    <class kind="class">Eigen::IterationController</class>
+    <member kind="function">
+      <type>void</type>
+      <name>constrained_cg</name>
+      <anchorfile>group__IterativeSolvers__Module.html</anchorfile>
+      <anchor>ga1c2f99746877fd46158af4a6b7dce2f9</anchor>
+      <arglist>(const TMatrix &amp;A, const CMatrix &amp;C, VectorX &amp;x, const VectorB &amp;b, const VectorF &amp;f, IterationController &amp;iter)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>pseudo_inverse</name>
+      <anchorfile>group__IterativeSolvers__Module.html</anchorfile>
+      <anchor>ga58a0ccf0e71d88beeb5dcf72ed0bdd5f</anchor>
+      <arglist>(const CMatrix &amp;C, CINVMatrix &amp;CINV)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>KroneckerProduct_Module</name>
+    <title>KroneckerProduct module</title>
+    <filename>group__KroneckerProduct__Module.html</filename>
+    <member kind="function">
+      <type>KroneckerProduct&lt; A, B &gt;</type>
+      <name>kroneckerProduct</name>
+      <anchorfile>group__KroneckerProduct__Module.html</anchorfile>
+      <anchor>gaa8924dffc6cee7aa1e908dc395a7a167</anchor>
+      <arglist>(const MatrixBase&lt; A &gt; &amp;a, const MatrixBase&lt; B &gt; &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>KroneckerProductSparse&lt; A, B &gt;</type>
+      <name>kroneckerProduct</name>
+      <anchorfile>group__KroneckerProduct__Module.html</anchorfile>
+      <anchor>gaca497f43cc92bcbf6eaff64984a266cc</anchor>
+      <arglist>(const EigenBase&lt; A &gt; &amp;a, const EigenBase&lt; B &gt; &amp;b)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>LevenbergMarquardt_Module</name>
+    <title>Levenberg-Marquardt module</title>
+    <filename>group__LevenbergMarquardt__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>MatrixFunctions_Module</name>
+    <title>Matrix functions module</title>
+    <filename>group__MatrixFunctions__Module.html</filename>
+    <class kind="class">Eigen::MatrixExponential</class>
+    <class kind="struct">Eigen::MatrixExponentialReturnValue</class>
+    <class kind="class">Eigen::MatrixFunction</class>
+    <class kind="class">Eigen::MatrixFunctionAtomic</class>
+    <class kind="class">Eigen::MatrixFunctionReturnValue</class>
+    <class kind="class">Eigen::MatrixLogarithmAtomic</class>
+    <class kind="class">Eigen::MatrixLogarithmReturnValue</class>
+    <class kind="class">Eigen::MatrixPower</class>
+    <class kind="class">Eigen::MatrixPowerReturnValue</class>
+    <class kind="class">Eigen::MatrixSquareRoot</class>
+    <class kind="class">Eigen::MatrixSquareRootQuasiTriangular</class>
+    <class kind="class">Eigen::MatrixSquareRootReturnValue</class>
+    <class kind="class">Eigen::MatrixSquareRootTriangular</class>
+    <class kind="class">Eigen::StdStemFunctions</class>
+    <page>group__MatrixFunctions__Module</page>
+  </compound>
+  <compound kind="group">
+    <name>MoreVectorization</name>
+    <title>More vectorization module</title>
+    <filename>group__MoreVectorization.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>MPRealSupport_Module</name>
+    <title>MPFRC++ Support module</title>
+    <filename>group__MPRealSupport__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>NonLinearOptimization_Module</name>
+    <title>Non linear optimization module</title>
+    <filename>group__NonLinearOptimization__Module.html</filename>
+    <class kind="class">Eigen::HybridNonLinearSolver</class>
+    <class kind="class">Eigen::LevenbergMarquardt</class>
+    <docanchor file="group__NonLinearOptimization__Module" title="Tests">Tests</docanchor>
+    <docanchor file="group__NonLinearOptimization__Module" title="API : overview of methods">API</docanchor>
+    <docanchor file="group__NonLinearOptimization__Module" title="Examples">examples</docanchor>
+  </compound>
+  <compound kind="group">
+    <name>NumericalDiff_Module</name>
+    <title>Numerical differentiation module</title>
+    <filename>group__NumericalDiff__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>OpenGLSUpport_Module</name>
+    <title>OpenGL Support module</title>
+    <filename>group__OpenGLSUpport__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>Polynomials_Module</name>
+    <title>Polynomials module</title>
+    <filename>group__Polynomials__Module.html</filename>
+    <class kind="class">Eigen::PolynomialSolver</class>
+    <class kind="class">Eigen::PolynomialSolverBase</class>
+    <member kind="function">
+      <type>NumTraits&lt; typename Polynomial::Scalar &gt;::Real</type>
+      <name>cauchy_max_bound</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>ga375e3ea1f370fb76dfe0f43a89b95926</anchor>
+      <arglist>(const Polynomial &amp;poly)</arglist>
+    </member>
+    <member kind="function">
+      <type>NumTraits&lt; typename Polynomial::Scalar &gt;::Real</type>
+      <name>cauchy_min_bound</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>gab076afbdba0e9298a541cc4e8cc7506b</anchor>
+      <arglist>(const Polynomial &amp;poly)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>poly_eval</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>gadb64ffddaa9e83634e3ab0e3fd3664f5</anchor>
+      <arglist>(const Polynomials &amp;poly, const T &amp;x)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>poly_eval_horner</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>gaadbf059bc28ce1cf94c57c1454633d40</anchor>
+      <arglist>(const Polynomials &amp;poly, const T &amp;x)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>roots_to_monicPolynomial</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>gafbc3648f7ef67db3d5d04454fc1257fd</anchor>
+      <arglist>(const RootVector &amp;rv, Polynomial &amp;poly)</arglist>
+    </member>
+    <page>group__Polynomials__Module</page>
+  </compound>
+  <compound kind="group">
+    <name>Skyline_Module</name>
+    <title>Skyline module</title>
+    <filename>group__Skyline__Module.html</filename>
+    <class kind="class">Eigen::SkylineInplaceLU</class>
+    <class kind="class">Eigen::SkylineMatrix</class>
+    <class kind="class">Eigen::SkylineMatrixBase</class>
+  </compound>
+  <compound kind="group">
+    <name>SparseExtra_Module</name>
+    <title>SparseExtra module</title>
+    <filename>group__SparseExtra__Module.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>Splines_Module</name>
+    <title>Spline and spline fitting module</title>
+    <filename>group__Splines__Module.html</filename>
+    <class kind="class">Eigen::Spline</class>
+    <class kind="struct">Eigen::SplineFitting</class>
+    <class kind="struct">Eigen::SplineTraits&lt; Spline&lt; _Scalar, _Dim, _Degree &gt;, _DerivativeOrder &gt;</class>
+    <class kind="struct">Eigen::SplineTraits&lt; Spline&lt; _Scalar, _Dim, _Degree &gt;, Dynamic &gt;</class>
+    <member kind="function">
+      <type>void</type>
+      <name>ChordLengths</name>
+      <anchorfile>group__Splines__Module.html</anchorfile>
+      <anchor>ga1b4cbde5d98411405871accf877552d2</anchor>
+      <arglist>(const PointArrayType &amp;pts, KnotVectorType &amp;chord_lengths)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>KnotAveraging</name>
+      <anchorfile>group__Splines__Module.html</anchorfile>
+      <anchor>ga9474da5ed68bbd9a6788a999330416d6</anchor>
+      <arglist>(const KnotVectorType &amp;parameters, DenseIndex degree, KnotVectorType &amp;knots)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>SVD_Module</name>
+    <title>SVD module</title>
+    <filename>group__SVD__Module.html</filename>
+    <class kind="class">Eigen::BDCSVD</class>
+    <class kind="class">Eigen::JacobiSVD</class>
+    <class kind="class">Eigen::SVDBase</class>
+  </compound>
+  <compound kind="namespace">
+    <name>Eigen</name>
+    <filename>namespaceEigen.html</filename>
+    <class kind="class">Eigen::AlignedVector3</class>
+    <class kind="class">Eigen::AutoDiffScalar</class>
+    <class kind="class">Eigen::BDCSVD</class>
+    <class kind="class">Eigen::DGMRES</class>
+    <class kind="class">Eigen::DynamicSparseMatrix</class>
+    <class kind="class">Eigen::GMRES</class>
+    <class kind="class">Eigen::HybridNonLinearSolver</class>
+    <class kind="class">Eigen::IncompleteCholesky</class>
+    <class kind="class">Eigen::IterationController</class>
+    <class kind="class">Eigen::JacobiSVD</class>
+    <class kind="class">Eigen::KdBVH</class>
+    <class kind="class">Eigen::KroneckerProduct</class>
+    <class kind="class">Eigen::KroneckerProductSparse</class>
+    <class kind="class">Eigen::LevenbergMarquardt</class>
+    <class kind="class">Eigen::MatrixExponential</class>
+    <class kind="struct">Eigen::MatrixExponentialReturnValue</class>
+    <class kind="class">Eigen::MatrixFunction</class>
+    <class kind="class">Eigen::MatrixFunctionAtomic</class>
+    <class kind="class">Eigen::MatrixFunctionReturnValue</class>
+    <class kind="class">Eigen::MatrixLogarithmAtomic</class>
+    <class kind="class">Eigen::MatrixLogarithmReturnValue</class>
+    <class kind="class">Eigen::MatrixMarketIterator</class>
+    <class kind="class">Eigen::MatrixPower</class>
+    <class kind="class">Eigen::MatrixPowerReturnValue</class>
+    <class kind="class">Eigen::MatrixSquareRoot</class>
+    <class kind="class">Eigen::MatrixSquareRootQuasiTriangular</class>
+    <class kind="class">Eigen::MatrixSquareRootReturnValue</class>
+    <class kind="class">Eigen::MatrixSquareRootTriangular</class>
+    <class kind="class">Eigen::MINRES</class>
+    <class kind="class">Eigen::NumericalDiff</class>
+    <class kind="class">Eigen::PolynomialSolver</class>
+    <class kind="class">Eigen::PolynomialSolverBase</class>
+    <class kind="class">Eigen::RandomSetter</class>
+    <class kind="class">Eigen::SkylineInplaceLU</class>
+    <class kind="class">Eigen::SkylineMatrix</class>
+    <class kind="class">Eigen::SkylineMatrixBase</class>
+    <class kind="class">Eigen::SkylineStorage</class>
+    <class kind="class">Eigen::Spline</class>
+    <class kind="struct">Eigen::SplineFitting</class>
+    <class kind="struct">Eigen::SplineTraits&lt; Spline&lt; _Scalar, _Dim, _Degree &gt;, _DerivativeOrder &gt;</class>
+    <class kind="struct">Eigen::SplineTraits&lt; Spline&lt; _Scalar, _Dim, _Degree &gt;, Dynamic &gt;</class>
+    <class kind="struct">Eigen::StdMapTraits</class>
+    <class kind="class">Eigen::StdStemFunctions</class>
+    <class kind="class">Eigen::SVDBase</class>
+    <member kind="typedef">
+      <type>Spline&lt; double, 2 &gt;</type>
+      <name>Spline2d</name>
+      <anchorfile>namespaceEigen.html</anchorfile>
+      <anchor>ac873daea7b3a9b6b8f7871c870d2ebe6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Spline&lt; float, 2 &gt;</type>
+      <name>Spline2f</name>
+      <anchorfile>namespaceEigen.html</anchorfile>
+      <anchor>a1bd2c65ab58ac9650d544d48eb9b344f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Spline&lt; double, 3 &gt;</type>
+      <name>Spline3d</name>
+      <anchorfile>namespaceEigen.html</anchorfile>
+      <anchor>afe16609b15ce4504173a6eaabe900f35</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Spline&lt; float, 3 &gt;</type>
+      <name>Spline3f</name>
+      <anchorfile>namespaceEigen.html</anchorfile>
+      <anchor>a39ab6860f203ce6726ddc9522b2826e9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>BVIntersect</name>
+      <anchorfile>namespaceEigen.html</anchorfile>
+      <anchor>a07d8e283f082c972338f3fc4f644b2a9</anchor>
+      <arglist>(const BVH &amp;tree, Intersector &amp;intersector)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>BVIntersect</name>
+      <anchorfile>namespaceEigen.html</anchorfile>
+      <anchor>ac3b8047a3ee05b5e6fec4668197a9a43</anchor>
+      <arglist>(const BVH1 &amp;tree1, const BVH2 &amp;tree2, Intersector &amp;intersector)</arglist>
+    </member>
+    <member kind="function">
+      <type>Minimizer::Scalar</type>
+      <name>BVMinimize</name>
+      <anchorfile>namespaceEigen.html</anchorfile>
+      <anchor>adcbe73ac1482eacab0e18ee32c25508e</anchor>
+      <arglist>(const BVH &amp;tree, Minimizer &amp;minimizer)</arglist>
+    </member>
+    <member kind="function">
+      <type>Minimizer::Scalar</type>
+      <name>BVMinimize</name>
+      <anchorfile>namespaceEigen.html</anchorfile>
+      <anchor>a915f6adc8b195c94a83c35de6a842556</anchor>
+      <arglist>(const BVH1 &amp;tree1, const BVH2 &amp;tree2, Minimizer &amp;minimizer)</arglist>
+    </member>
+    <member kind="function">
+      <type>NumTraits&lt; typename Polynomial::Scalar &gt;::Real</type>
+      <name>cauchy_max_bound</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>ga375e3ea1f370fb76dfe0f43a89b95926</anchor>
+      <arglist>(const Polynomial &amp;poly)</arglist>
+    </member>
+    <member kind="function">
+      <type>NumTraits&lt; typename Polynomial::Scalar &gt;::Real</type>
+      <name>cauchy_min_bound</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>gab076afbdba0e9298a541cc4e8cc7506b</anchor>
+      <arglist>(const Polynomial &amp;poly)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ChordLengths</name>
+      <anchorfile>group__Splines__Module.html</anchorfile>
+      <anchor>ga1b4cbde5d98411405871accf877552d2</anchor>
+      <arglist>(const PointArrayType &amp;pts, KnotVectorType &amp;chord_lengths)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>KnotAveraging</name>
+      <anchorfile>group__Splines__Module.html</anchorfile>
+      <anchor>ga9474da5ed68bbd9a6788a999330416d6</anchor>
+      <arglist>(const KnotVectorType &amp;parameters, DenseIndex degree, KnotVectorType &amp;knots)</arglist>
+    </member>
+    <member kind="function">
+      <type>KroneckerProduct&lt; A, B &gt;</type>
+      <name>kroneckerProduct</name>
+      <anchorfile>group__KroneckerProduct__Module.html</anchorfile>
+      <anchor>gaa8924dffc6cee7aa1e908dc395a7a167</anchor>
+      <arglist>(const MatrixBase&lt; A &gt; &amp;a, const MatrixBase&lt; B &gt; &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>KroneckerProductSparse&lt; A, B &gt;</type>
+      <name>kroneckerProduct</name>
+      <anchorfile>group__KroneckerProduct__Module.html</anchorfile>
+      <anchor>gaca497f43cc92bcbf6eaff64984a266cc</anchor>
+      <arglist>(const EigenBase&lt; A &gt; &amp;a, const EigenBase&lt; B &gt; &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>poly_eval</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>gadb64ffddaa9e83634e3ab0e3fd3664f5</anchor>
+      <arglist>(const Polynomials &amp;poly, const T &amp;x)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>poly_eval_horner</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>gaadbf059bc28ce1cf94c57c1454633d40</anchor>
+      <arglist>(const Polynomials &amp;poly, const T &amp;x)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>roots_to_monicPolynomial</name>
+      <anchorfile>group__Polynomials__Module.html</anchorfile>
+      <anchor>gafbc3648f7ef67db3d5d04454fc1257fd</anchor>
+      <arglist>(const RootVector &amp;rv, Polynomial &amp;poly)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::AlignedVector3</name>
+    <filename>classEigen_1_1AlignedVector3.html</filename>
+    <templarg></templarg>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::AutoDiffScalar</name>
+    <filename>classEigen_1_1AutoDiffScalar.html</filename>
+    <templarg>_DerType</templarg>
+    <member kind="function">
+      <type></type>
+      <name>AutoDiffScalar</name>
+      <anchorfile>classEigen_1_1AutoDiffScalar.html</anchorfile>
+      <anchor>a9709325db07d9ce76afddb01aa9beddc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>AutoDiffScalar</name>
+      <anchorfile>classEigen_1_1AutoDiffScalar.html</anchorfile>
+      <anchor>a21b42dd5bb572f0dbbb6c84fa39cefe1</anchor>
+      <arglist>(const Scalar &amp;value, int nbDer, int derNumber)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>AutoDiffScalar</name>
+      <anchorfile>classEigen_1_1AutoDiffScalar.html</anchorfile>
+      <anchor>a2e2b93d0821398f0d0900198a94364de</anchor>
+      <arglist>(const Real &amp;value)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>AutoDiffScalar</name>
+      <anchorfile>classEigen_1_1AutoDiffScalar.html</anchorfile>
+      <anchor>a2110c8207fcb357e6669966276dcc91b</anchor>
+      <arglist>(const Scalar &amp;value, const DerType &amp;der)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::BDCSVD</name>
+    <filename>classEigen_1_1BDCSVD.html</filename>
+    <templarg></templarg>
+    <base>Eigen::SVDBase</base>
+    <member kind="function">
+      <type></type>
+      <name>BDCSVD</name>
+      <anchorfile>classEigen_1_1BDCSVD.html</anchorfile>
+      <anchor>a15bb6fe0bfbcf6ac5bad8ddcafd34387</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>BDCSVD</name>
+      <anchorfile>classEigen_1_1BDCSVD.html</anchorfile>
+      <anchor>a0b1282c48b843773424d97e65ee21060</anchor>
+      <arglist>(Index rows, Index cols, unsigned int computationOptions=0)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>BDCSVD</name>
+      <anchorfile>classEigen_1_1BDCSVD.html</anchorfile>
+      <anchor>a3c9182989cf14fd0111ad6c2bc0eb8b3</anchor>
+      <arglist>(const MatrixType &amp;matrix, unsigned int computationOptions=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>SVDBase&lt; MatrixType &gt; &amp;</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1BDCSVD.html</anchorfile>
+      <anchor>a3b2bfdc0a8dd672390fb4ba22f4ef434</anchor>
+      <arglist>(const MatrixType &amp;matrix, unsigned int computationOptions)</arglist>
+    </member>
+    <member kind="function">
+      <type>SVDBase&lt; MatrixType &gt; &amp;</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1BDCSVD.html</anchorfile>
+      <anchor>a26e02670d0a94c92ab41c2bc7f70e781</anchor>
+      <arglist>(const MatrixType &amp;matrix)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>computeU</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>a1ffab6aab715fe0918a841611a95e9aa</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>computeV</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>a92e99646eefbeb071ef220841555a703</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>nonzeroSingularValues</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>aa468765ea9b7f0e92380fa206e6498bd</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>const SingularValuesType &amp;</type>
+      <name>singularValues</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>a48d4068b97dfbb83d62599e56e26797a</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>const internal::solve_retval&lt; BDCSVD, Rhs &gt;</type>
+      <name>solve</name>
+      <anchorfile>classEigen_1_1BDCSVD.html</anchorfile>
+      <anchor>ac872405f6364be4078b367ac4c6c0c01</anchor>
+      <arglist>(const MatrixBase&lt; Rhs &gt; &amp;b) const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::DGMRES</name>
+    <filename>classEigen_1_1DGMRES.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type>int</type>
+      <name>deflSize</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>a62f9d64844caff6007cabecc997fbad1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>DGMRES</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>acebe7001a430de6ff6059e42a2c3d7e1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>DGMRES</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>a13ee3911a809ab56f9d207f4201134ad</anchor>
+      <arglist>(const MatrixType &amp;A)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>restart</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>ae246359e104d63520158c26329caac80</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_restart</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>a88b3d18c69eccbd4b1c68a5713a05bb3</anchor>
+      <arglist>(const int restart)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setEigenv</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>a16852b8c7e2b1a8154937d392d342051</anchor>
+      <arglist>(const int neig)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxEigenv</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>afed207f423f44020219ac444b982dcf9</anchor>
+      <arglist>(const int maxNeig)</arglist>
+    </member>
+    <member kind="function">
+      <type>const internal::solve_retval_with_guess&lt; DGMRES, Rhs, Guess &gt;</type>
+      <name>solveWithGuess</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>a3ceaab72040862ca224adc3984eed08c</anchor>
+      <arglist>(const MatrixBase&lt; Rhs &gt; &amp;b, const Guess &amp;x0) const </arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>dgmres</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>ac77967ca048597f4b4cba3a6bf00b0a4</anchor>
+      <arglist>(const MatrixType &amp;mat, const Rhs &amp;rhs, Dest &amp;x, const Preconditioner &amp;precond) const </arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>int</type>
+      <name>dgmresCycle</name>
+      <anchorfile>classEigen_1_1DGMRES.html</anchorfile>
+      <anchor>ad56b61782bcd392b88b807c9e6099e02</anchor>
+      <arglist>(const MatrixType &amp;mat, const Preconditioner &amp;precond, Dest &amp;x, DenseVector &amp;r0, RealScalar &amp;beta, const RealScalar &amp;normRhs, int &amp;nbIts) const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::DynamicSparseMatrix</name>
+    <filename>classEigen_1_1DynamicSparseMatrix.html</filename>
+    <templarg></templarg>
+    <templarg>_Options</templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type>Scalar</type>
+      <name>coeff</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>afacbe8d905dd8b00eb52e72c2e938aed</anchor>
+      <arglist>(Index row, Index col) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Scalar &amp;</type>
+      <name>coeffRef</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a4386da578a119f7b500d0b22cab2de0e</anchor>
+      <arglist>(Index row, Index col)</arglist>
+    </member>
+    <member kind="function">
+      <type>EIGEN_DEPRECATED</type>
+      <name>DynamicSparseMatrix</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>ae27d1faefd5879b9832ef3cdcdf1d2a5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>EIGEN_DEPRECATED</type>
+      <name>DynamicSparseMatrix</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a68f99df87a3adde9059896b7ee2e0a05</anchor>
+      <arglist>(Index rows, Index cols)</arglist>
+    </member>
+    <member kind="function">
+      <type>EIGEN_DEPRECATED</type>
+      <name>DynamicSparseMatrix</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a005ecda8d658814897738d01dce9b632</anchor>
+      <arglist>(const SparseMatrixBase&lt; OtherDerived &gt; &amp;other)</arglist>
+    </member>
+    <member kind="function">
+      <type>EIGEN_DEPRECATED void</type>
+      <name>endFill</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>ac4e13054f9fe39b12600d631680c31cf</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>EIGEN_DEPRECATED Scalar &amp;</type>
+      <name>fill</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a7e0ac68bd0fd45228319d32dd47c8c03</anchor>
+      <arglist>(Index row, Index col)</arglist>
+    </member>
+    <member kind="function">
+      <type>EIGEN_DEPRECATED Scalar &amp;</type>
+      <name>fillrand</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a4fa4b589d0cdf15579e7374ed3b40519</anchor>
+      <arglist>(Index row, Index col)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>finalize</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a32d626626eee0bc4ade146973f6abb1c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Scalar &amp;</type>
+      <name>insertBack</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>aae3ed18f1bc031dc106e3b9392e4cee6</anchor>
+      <arglist>(Index row, Index col)</arglist>
+    </member>
+    <member kind="function">
+      <type>Scalar &amp;</type>
+      <name>insertBackByOuterInner</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a3ca40df6d5751a1db62db65f77ad910d</anchor>
+      <arglist>(Index outer, Index inner)</arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>nonZeros</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>abe29bfb5f2d88cf2a50ffb577ec6f0a4</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>prune</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>ad1813585518a9465421e4e561364b9b5</anchor>
+      <arglist>(Scalar reference, RealScalar epsilon=NumTraits&lt; RealScalar &gt;::dummy_precision())</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resize</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>ac20f895ce9b73fa7447196855c0d0758</anchor>
+      <arglist>(Index rows, Index cols)</arglist>
+    </member>
+    <member kind="function">
+      <type>EIGEN_DEPRECATED void</type>
+      <name>startFill</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a80ae13cd0a2da4f7a6b9b9e131b52ea2</anchor>
+      <arglist>(Index reserveSize=1000)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>startVec</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a34ee869bdf82a292f508f781cc359030</anchor>
+      <arglist>(Index)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~DynamicSparseMatrix</name>
+      <anchorfile>classEigen_1_1DynamicSparseMatrix.html</anchorfile>
+      <anchor>a73ba3b1e1403972e4f32eb10bfa63215</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::GMRES</name>
+    <filename>classEigen_1_1GMRES.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type>int</type>
+      <name>get_restart</name>
+      <anchorfile>classEigen_1_1GMRES.html</anchorfile>
+      <anchor>a577e417ca9e13ffb281283eddb7b72e7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>GMRES</name>
+      <anchorfile>classEigen_1_1GMRES.html</anchorfile>
+      <anchor>add9a5ff2ad65b482c41d012a0aaa67f2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>GMRES</name>
+      <anchorfile>classEigen_1_1GMRES.html</anchorfile>
+      <anchor>aabc3674283f6f4acbebd68eb72a00e03</anchor>
+      <arglist>(const MatrixType &amp;A)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_restart</name>
+      <anchorfile>classEigen_1_1GMRES.html</anchorfile>
+      <anchor>a88b3d18c69eccbd4b1c68a5713a05bb3</anchor>
+      <arglist>(const int restart)</arglist>
+    </member>
+    <member kind="function">
+      <type>const internal::solve_retval_with_guess&lt; GMRES, Rhs, Guess &gt;</type>
+      <name>solveWithGuess</name>
+      <anchorfile>classEigen_1_1GMRES.html</anchorfile>
+      <anchor>adc63f61d3b9cadbcbd7841ddae858110</anchor>
+      <arglist>(const MatrixBase&lt; Rhs &gt; &amp;b, const Guess &amp;x0) const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::HybridNonLinearSolver</name>
+    <filename>classEigen_1_1HybridNonLinearSolver.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::IncompleteCholesky</name>
+    <filename>classEigen_1_1IncompleteCholesky.html</filename>
+    <templarg></templarg>
+    <templarg>_UpLo</templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>analyzePattern</name>
+      <anchorfile>classEigen_1_1IncompleteCholesky.html</anchorfile>
+      <anchor>ab7fe6bbf6e1f204b26d8d51dddd91ef5</anchor>
+      <arglist>(const MatrixType &amp;mat)</arglist>
+    </member>
+    <member kind="function">
+      <type>ComputationInfo</type>
+      <name>info</name>
+      <anchorfile>classEigen_1_1IncompleteCholesky.html</anchorfile>
+      <anchor>a0c06d5c2034ebb329c54235369643ad2</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setShift</name>
+      <anchorfile>classEigen_1_1IncompleteCholesky.html</anchorfile>
+      <anchor>a97a1af8000af707d70590c1e275d8f6f</anchor>
+      <arglist>(Scalar shift)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::IterationController</name>
+    <filename>classEigen_1_1IterationController.html</filename>
+    <member kind="variable" protection="protected">
+      <type>size_t</type>
+      <name>m_maxiter</name>
+      <anchorfile>classEigen_1_1IterationController.html</anchorfile>
+      <anchor>a82279ed0176ac23ca6bc279e9a47ae48</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>size_t</type>
+      <name>m_nit</name>
+      <anchorfile>classEigen_1_1IterationController.html</anchorfile>
+      <anchor>a99eaa6b23133fa11681c6427b7267f06</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>int</type>
+      <name>m_noise</name>
+      <anchorfile>classEigen_1_1IterationController.html</anchorfile>
+      <anchor>a0932caae3d511df250de96e8bae72bd8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>m_res</name>
+      <anchorfile>classEigen_1_1IterationController.html</anchorfile>
+      <anchor>a97cd0c8c4862cc36f76f30a83dcde798</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>m_resmax</name>
+      <anchorfile>classEigen_1_1IterationController.html</anchorfile>
+      <anchor>a88408ba2662819dfefaae68a361a8fca</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>m_rhsn</name>
+      <anchorfile>classEigen_1_1IterationController.html</anchorfile>
+      <anchor>a086ae166c50d1524d3aa8378cd9ffc01</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::JacobiSVD</name>
+    <filename>classEigen_1_1JacobiSVD.html</filename>
+    <templarg></templarg>
+    <templarg>QRPreconditioner</templarg>
+    <base>Eigen::SVDBase</base>
+    <member kind="function">
+      <type>SVDBase&lt; MatrixType &gt; &amp;</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1JacobiSVD.html</anchorfile>
+      <anchor>a3b2bfdc0a8dd672390fb4ba22f4ef434</anchor>
+      <arglist>(const MatrixType &amp;matrix, unsigned int computationOptions)</arglist>
+    </member>
+    <member kind="function">
+      <type>SVDBase&lt; MatrixType &gt; &amp;</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1JacobiSVD.html</anchorfile>
+      <anchor>a26e02670d0a94c92ab41c2bc7f70e781</anchor>
+      <arglist>(const MatrixType &amp;matrix)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>JacobiSVD</name>
+      <anchorfile>classEigen_1_1JacobiSVD.html</anchorfile>
+      <anchor>a0e963136a69da877ff06f27e7b746351</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>JacobiSVD</name>
+      <anchorfile>classEigen_1_1JacobiSVD.html</anchorfile>
+      <anchor>a18cfaad45164fc79a0b5e65c194d049d</anchor>
+      <arglist>(Index rows, Index cols, unsigned int computationOptions=0)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>JacobiSVD</name>
+      <anchorfile>classEigen_1_1JacobiSVD.html</anchorfile>
+      <anchor>af7d98465f0e886d96423857591a34b26</anchor>
+      <arglist>(const MatrixType &amp;matrix, unsigned int computationOptions=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>const MatrixUType &amp;</type>
+      <name>matrixU</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>a49e16a4adf4fe58a2d65a5e5a31e7654</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>const MatrixVType &amp;</type>
+      <name>matrixV</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>ae5158ab7ca44a705c2a3b56ec926b42a</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>const internal::solve_retval&lt; JacobiSVD, Rhs &gt;</type>
+      <name>solve</name>
+      <anchorfile>classEigen_1_1JacobiSVD.html</anchorfile>
+      <anchor>ae86e342cd51b067b08f8de8bae77537f</anchor>
+      <arglist>(const MatrixBase&lt; Rhs &gt; &amp;b) const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::KdBVH</name>
+    <filename>classEigen_1_1KdBVH.html</filename>
+    <templarg>_Scalar</templarg>
+    <templarg>_Dim</templarg>
+    <templarg>_Object</templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>getChildren</name>
+      <anchorfile>classEigen_1_1KdBVH.html</anchorfile>
+      <anchor>a88354e0fefc749d13640a60ffe30e850</anchor>
+      <arglist>(Index index, VolumeIterator &amp;outVBegin, VolumeIterator &amp;outVEnd, ObjectIterator &amp;outOBegin, ObjectIterator &amp;outOEnd) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>getRootIndex</name>
+      <anchorfile>classEigen_1_1KdBVH.html</anchorfile>
+      <anchor>a6e92e01e1caffcf76e051860ba193d8d</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>const Volume &amp;</type>
+      <name>getVolume</name>
+      <anchorfile>classEigen_1_1KdBVH.html</anchorfile>
+      <anchor>af0be37ad63c87fd0f84f032bdb80534f</anchor>
+      <arglist>(Index index) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>init</name>
+      <anchorfile>classEigen_1_1KdBVH.html</anchorfile>
+      <anchor>a89e898247922e6e4e1db057a626225a0</anchor>
+      <arglist>(Iter begin, Iter end)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>init</name>
+      <anchorfile>classEigen_1_1KdBVH.html</anchorfile>
+      <anchor>a92efd52a33d4228274c5f1896ed94b68</anchor>
+      <arglist>(OIter begin, OIter end, BIter boxBegin, BIter boxEnd)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>KdBVH</name>
+      <anchorfile>classEigen_1_1KdBVH.html</anchorfile>
+      <anchor>a4338491d2b517c9db2267dc16d18f548</anchor>
+      <arglist>(Iter begin, Iter end)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>KdBVH</name>
+      <anchorfile>classEigen_1_1KdBVH.html</anchorfile>
+      <anchor>a2665b91b46996e439b716671d5d92c6f</anchor>
+      <arglist>(OIter begin, OIter end, BIter boxBegin, BIter boxEnd)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::KroneckerProduct</name>
+    <filename>classEigen_1_1KroneckerProduct.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>evalTo</name>
+      <anchorfile>classEigen_1_1KroneckerProduct.html</anchorfile>
+      <anchor>a4bce1b0cbd668b88d690b6016a529b7c</anchor>
+      <arglist>(Dest &amp;dst) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>KroneckerProduct</name>
+      <anchorfile>classEigen_1_1KroneckerProduct.html</anchorfile>
+      <anchor>a73212557fed8d9b3c415c0c57dd2a98e</anchor>
+      <arglist>(const Lhs &amp;A, const Rhs &amp;B)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::KroneckerProductSparse</name>
+    <filename>classEigen_1_1KroneckerProductSparse.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>evalTo</name>
+      <anchorfile>classEigen_1_1KroneckerProductSparse.html</anchorfile>
+      <anchor>a4bce1b0cbd668b88d690b6016a529b7c</anchor>
+      <arglist>(Dest &amp;dst) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>KroneckerProductSparse</name>
+      <anchorfile>classEigen_1_1KroneckerProductSparse.html</anchorfile>
+      <anchor>a5070a9f0e4ab4ab01ef01b1d88ed81d0</anchor>
+      <arglist>(const Lhs &amp;A, const Rhs &amp;B)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::LevenbergMarquardt</name>
+    <filename>classEigen_1_1LevenbergMarquardt.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>FVectorType &amp;</type>
+      <name>diag</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a937987337a0875eee70a181a02cb9122</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>RealScalar</type>
+      <name>fnorm</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a09f0a7a9fefa463f4415e386922b3b48</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FVectorType &amp;</type>
+      <name>fvec</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a8407d07d45184a84310dfaa297ca9425</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>RealScalar</type>
+      <name>gnorm</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>ac4b9a92a37e8f656a9bc7f222d3f1d3b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ComputationInfo</type>
+      <name>info</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a0c06d5c2034ebb329c54235369643ad2</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>iterations</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>af30ae57fc2b4e8bf3db78546c88b16fd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>JacobianType &amp;</type>
+      <name>jacobian</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a25db3205d4c857ff01b227fa9ba1e91f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>RealScalar</type>
+      <name>lm_param</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>aa6d934df3d16027df0d0100cca3841fe</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>JacobianType &amp;</type>
+      <name>matrixR</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a021e06e5e35dcff2b1e523df44ecb90b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>nfev</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>ad39de8ec664e09b12b528b4d8cdffc8c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>njev</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a4ec1e17c7206359b96335f2c0744a783</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>PermutationType</type>
+      <name>permutation</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>afb981cc5d4a68f39d4ffd8a681f4ed81</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resetParameters</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>af52cd5af951ff74e784deeadecf73552</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setEpsilon</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>ab4d7ae29dba1488e74da64faaf9f7ea0</anchor>
+      <arglist>(RealScalar epsfcn)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setExternalScaling</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a0f79478b8d636b815751fe0ea8c56b58</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFactor</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a20fae6c5fa1f67f4bf3973547ba82735</anchor>
+      <arglist>(RealScalar factor)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFtol</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a20efa2f5a684efaf2499ba5bdd51e792</anchor>
+      <arglist>(RealScalar ftol)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setGtol</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>afe5c8e692208d989449d3b83807acfe7</anchor>
+      <arglist>(RealScalar gtol)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxfev</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a17beb283813bbbc4b946d962c75dd1dd</anchor>
+      <arglist>(Index maxfev)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setXtol</name>
+      <anchorfile>classEigen_1_1LevenbergMarquardt.html</anchorfile>
+      <anchor>a85ef3a396655cdaded53650971dda177</anchor>
+      <arglist>(RealScalar xtol)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixExponential</name>
+    <filename>classEigen_1_1MatrixExponential.html</filename>
+    <templarg>MatrixType</templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1MatrixExponential.html</anchorfile>
+      <anchor>a37407499d669c7dd9af708e7dd6f9217</anchor>
+      <arglist>(ResultType &amp;result)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixExponential</name>
+      <anchorfile>classEigen_1_1MatrixExponential.html</anchorfile>
+      <anchor>ab95539bf1dcb956849da615f292aa6b1</anchor>
+      <arglist>(const MatrixType &amp;M)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>Eigen::MatrixExponentialReturnValue</name>
+    <filename>structEigen_1_1MatrixExponentialReturnValue.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>evalTo</name>
+      <anchorfile>structEigen_1_1MatrixExponentialReturnValue.html</anchorfile>
+      <anchor>a4f4ce27ebcf7fe1e0078d20d0393c766</anchor>
+      <arglist>(ResultType &amp;result) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixExponentialReturnValue</name>
+      <anchorfile>structEigen_1_1MatrixExponentialReturnValue.html</anchorfile>
+      <anchor>a7a10d88cebec216ce8dad9fc4926845f</anchor>
+      <arglist>(const Derived &amp;src)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixFunction</name>
+    <filename>classEigen_1_1MatrixFunction.html</filename>
+    <templarg>MatrixType</templarg>
+    <templarg>AtomicType</templarg>
+    <templarg>IsComplex</templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1MatrixFunction.html</anchorfile>
+      <anchor>a37407499d669c7dd9af708e7dd6f9217</anchor>
+      <arglist>(ResultType &amp;result)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixFunction</name>
+      <anchorfile>classEigen_1_1MatrixFunction.html</anchorfile>
+      <anchor>abf20da56863c164e96044d60b9b8d407</anchor>
+      <arglist>(const MatrixType &amp;A, AtomicType &amp;atomic)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixFunctionAtomic</name>
+    <filename>classEigen_1_1MatrixFunctionAtomic.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>MatrixType</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1MatrixFunctionAtomic.html</anchorfile>
+      <anchor>a64c0e596210ad59feb89cb2f061703fc</anchor>
+      <arglist>(const MatrixType &amp;A)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixFunctionAtomic</name>
+      <anchorfile>classEigen_1_1MatrixFunctionAtomic.html</anchorfile>
+      <anchor>ae33c64e02a5b5d44329aea0dd21e8fcb</anchor>
+      <arglist>(StemFunction f)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixFunctionReturnValue</name>
+    <filename>classEigen_1_1MatrixFunctionReturnValue.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>evalTo</name>
+      <anchorfile>classEigen_1_1MatrixFunctionReturnValue.html</anchorfile>
+      <anchor>a4f4ce27ebcf7fe1e0078d20d0393c766</anchor>
+      <arglist>(ResultType &amp;result) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixFunctionReturnValue</name>
+      <anchorfile>classEigen_1_1MatrixFunctionReturnValue.html</anchorfile>
+      <anchor>a43b73b3470694f1eb5a265a36fd730e0</anchor>
+      <arglist>(const Derived &amp;A, StemFunction f)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixLogarithmAtomic</name>
+    <filename>classEigen_1_1MatrixLogarithmAtomic.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>MatrixType</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1MatrixLogarithmAtomic.html</anchorfile>
+      <anchor>a64c0e596210ad59feb89cb2f061703fc</anchor>
+      <arglist>(const MatrixType &amp;A)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixLogarithmAtomic</name>
+      <anchorfile>classEigen_1_1MatrixLogarithmAtomic.html</anchorfile>
+      <anchor>acf3a47acd2c12cdb22c718169a6d6c29</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixLogarithmReturnValue</name>
+    <filename>classEigen_1_1MatrixLogarithmReturnValue.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>evalTo</name>
+      <anchorfile>classEigen_1_1MatrixLogarithmReturnValue.html</anchorfile>
+      <anchor>a4f4ce27ebcf7fe1e0078d20d0393c766</anchor>
+      <arglist>(ResultType &amp;result) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixLogarithmReturnValue</name>
+      <anchorfile>classEigen_1_1MatrixLogarithmReturnValue.html</anchorfile>
+      <anchor>a5a3adc36be4386f3d03d0523b46f551f</anchor>
+      <arglist>(const Derived &amp;A)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixMarketIterator</name>
+    <filename>classEigen_1_1MatrixMarketIterator.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>MatrixType &amp;</type>
+      <name>matrix</name>
+      <anchorfile>classEigen_1_1MatrixMarketIterator.html</anchorfile>
+      <anchor>ad7355bb89f8429007277363642c90bfd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>VectorType &amp;</type>
+      <name>refX</name>
+      <anchorfile>classEigen_1_1MatrixMarketIterator.html</anchorfile>
+      <anchor>a4ff1cc747d071b153430018f57663d4b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>VectorType &amp;</type>
+      <name>rhs</name>
+      <anchorfile>classEigen_1_1MatrixMarketIterator.html</anchorfile>
+      <anchor>a09e9e10469937f6e969421455d039f72</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixPower</name>
+    <filename>classEigen_1_1MatrixPower.html</filename>
+    <templarg>MatrixType</templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1MatrixPower.html</anchorfile>
+      <anchor>a95d38473ae16ef259e0d334538d050d6</anchor>
+      <arglist>(ResultType &amp;res, RealScalar p)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixPower</name>
+      <anchorfile>classEigen_1_1MatrixPower.html</anchorfile>
+      <anchor>a0c03931b4fff167eeaf6bab5161ae9cd</anchor>
+      <arglist>(const MatrixType &amp;A)</arglist>
+    </member>
+    <member kind="function">
+      <type>const MatrixPowerRetval&lt; MatrixType &gt;</type>
+      <name>operator()</name>
+      <anchorfile>classEigen_1_1MatrixPower.html</anchorfile>
+      <anchor>a77c0aa664c889e4aac24406385196e8a</anchor>
+      <arglist>(RealScalar p)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixPowerReturnValue</name>
+    <filename>classEigen_1_1MatrixPowerReturnValue.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>evalTo</name>
+      <anchorfile>classEigen_1_1MatrixPowerReturnValue.html</anchorfile>
+      <anchor>a86a2614cdaae1d0f395c075e5060cf1a</anchor>
+      <arglist>(ResultType &amp;res) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixPowerReturnValue</name>
+      <anchorfile>classEigen_1_1MatrixPowerReturnValue.html</anchorfile>
+      <anchor>a9d2732414d64fe27eae61ea71378b186</anchor>
+      <arglist>(const Derived &amp;A, RealScalar p)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixSquareRoot</name>
+    <filename>classEigen_1_1MatrixSquareRoot.html</filename>
+    <templarg></templarg>
+    <templarg>IsComplex</templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1MatrixSquareRoot.html</anchorfile>
+      <anchor>a37407499d669c7dd9af708e7dd6f9217</anchor>
+      <arglist>(ResultType &amp;result)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixSquareRoot</name>
+      <anchorfile>classEigen_1_1MatrixSquareRoot.html</anchorfile>
+      <anchor>a5233cb8199f82024af00482971ea8e58</anchor>
+      <arglist>(const MatrixType &amp;A)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixSquareRootQuasiTriangular</name>
+    <filename>classEigen_1_1MatrixSquareRootQuasiTriangular.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1MatrixSquareRootQuasiTriangular.html</anchorfile>
+      <anchor>a37407499d669c7dd9af708e7dd6f9217</anchor>
+      <arglist>(ResultType &amp;result)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixSquareRootQuasiTriangular</name>
+      <anchorfile>classEigen_1_1MatrixSquareRootQuasiTriangular.html</anchorfile>
+      <anchor>a5938579430b2d461b3331d5912cfcf33</anchor>
+      <arglist>(const MatrixType &amp;A)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixSquareRootReturnValue</name>
+    <filename>classEigen_1_1MatrixSquareRootReturnValue.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>evalTo</name>
+      <anchorfile>classEigen_1_1MatrixSquareRootReturnValue.html</anchorfile>
+      <anchor>a4f4ce27ebcf7fe1e0078d20d0393c766</anchor>
+      <arglist>(ResultType &amp;result) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MatrixSquareRootReturnValue</name>
+      <anchorfile>classEigen_1_1MatrixSquareRootReturnValue.html</anchorfile>
+      <anchor>a04d143e094b57f9a3299a87d5166d117</anchor>
+      <arglist>(const Derived &amp;src)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MatrixSquareRootTriangular</name>
+    <filename>classEigen_1_1MatrixSquareRootTriangular.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1MatrixSquareRootTriangular.html</anchorfile>
+      <anchor>a37407499d669c7dd9af708e7dd6f9217</anchor>
+      <arglist>(ResultType &amp;result)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::MINRES</name>
+    <filename>classEigen_1_1MINRES.html</filename>
+    <templarg></templarg>
+    <templarg>_UpLo</templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>MINRES</name>
+      <anchorfile>classEigen_1_1MINRES.html</anchorfile>
+      <anchor>a659d9410353da2cd0805a8d8da66f7ef</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MINRES</name>
+      <anchorfile>classEigen_1_1MINRES.html</anchorfile>
+      <anchor>a0044acd402c536a32be6e9575da39141</anchor>
+      <arglist>(const MatrixType &amp;A)</arglist>
+    </member>
+    <member kind="function">
+      <type>const internal::solve_retval_with_guess&lt; MINRES, Rhs, Guess &gt;</type>
+      <name>solveWithGuess</name>
+      <anchorfile>classEigen_1_1MINRES.html</anchorfile>
+      <anchor>a4a42888f2c0db9ad90fc3b718ae582ca</anchor>
+      <arglist>(const MatrixBase&lt; Rhs &gt; &amp;b, const Guess &amp;x0) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~MINRES</name>
+      <anchorfile>classEigen_1_1MINRES.html</anchorfile>
+      <anchor>a0ca81ac3b24c8216b3c526c1e454a40b</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::NumericalDiff</name>
+    <filename>classEigen_1_1NumericalDiff.html</filename>
+    <templarg></templarg>
+    <templarg>mode</templarg>
+    <member kind="function">
+      <type>int</type>
+      <name>df</name>
+      <anchorfile>classEigen_1_1NumericalDiff.html</anchorfile>
+      <anchor>ac3679efec954f93be463dcdca49283bf</anchor>
+      <arglist>(const InputType &amp;_x, JacobianType &amp;jac) const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::PolynomialSolver</name>
+    <filename>classEigen_1_1PolynomialSolver.html</filename>
+    <templarg></templarg>
+    <templarg>_Deg</templarg>
+    <base>Eigen::PolynomialSolverBase</base>
+    <member kind="function">
+      <type>const RealScalar &amp;</type>
+      <name>absGreatestRealRoot</name>
+      <anchorfile>classEigen_1_1PolynomialSolverBase.html</anchorfile>
+      <anchor>a39f7bf9d7209ad81023ac260c0c73b95</anchor>
+      <arglist>(bool &amp;hasArealRoot, const RealScalar &amp;absImaginaryThreshold=NumTraits&lt; Scalar &gt;::dummy_precision()) const </arglist>
+    </member>
+    <member kind="function">
+      <type>const RealScalar &amp;</type>
+      <name>absSmallestRealRoot</name>
+      <anchorfile>classEigen_1_1PolynomialSolverBase.html</anchorfile>
+      <anchor>a9d126b6ec7d4272a57c2599290eaded8</anchor>
+      <arglist>(bool &amp;hasArealRoot, const RealScalar &amp;absImaginaryThreshold=NumTraits&lt; Scalar &gt;::dummy_precision()) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1PolynomialSolver.html</anchorfile>
+      <anchor>a0ebea181d86798f6f44665459bbc0a9b</anchor>
+      <arglist>(const OtherPolynomial &amp;poly)</arglist>
+    </member>
+    <member kind="function">
+      <type>const RealScalar &amp;</type>
+      <name>greatestRealRoot</name>
+      <anchorfile>classEigen_1_1PolynomialSolverBase.html</anchorfile>
+      <anchor>a98061536184cd108e00753d4218fbbc1</anchor>
+      <arglist>(bool &amp;hasArealRoot, const RealScalar &amp;absImaginaryThreshold=NumTraits&lt; Scalar &gt;::dummy_precision()) const </arglist>
+    </member>
+    <member kind="function">
+      <type>const RootType &amp;</type>
+      <name>greatestRoot</name>
+      <anchorfile>classEigen_1_1PolynomialSolverBase.html</anchorfile>
+      <anchor>a1057f89aeacfd843351d5016dda4a047</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>realRoots</name>
+      <anchorfile>classEigen_1_1PolynomialSolverBase.html</anchorfile>
+      <anchor>a152ced5a7f96ba18528e540cd0c7e6ce</anchor>
+      <arglist>(Stl_back_insertion_sequence &amp;bi_seq, const RealScalar &amp;absImaginaryThreshold=NumTraits&lt; Scalar &gt;::dummy_precision()) const </arglist>
+    </member>
+    <member kind="function">
+      <type>const RootsType &amp;</type>
+      <name>roots</name>
+      <anchorfile>classEigen_1_1PolynomialSolverBase.html</anchorfile>
+      <anchor>a170e917417495c3d536ae6a1b75e9d1e</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>const RealScalar &amp;</type>
+      <name>smallestRealRoot</name>
+      <anchorfile>classEigen_1_1PolynomialSolverBase.html</anchorfile>
+      <anchor>a399ac0a070144fdb3b7266be28f47e8b</anchor>
+      <arglist>(bool &amp;hasArealRoot, const RealScalar &amp;absImaginaryThreshold=NumTraits&lt; Scalar &gt;::dummy_precision()) const </arglist>
+    </member>
+    <member kind="function">
+      <type>const RootType &amp;</type>
+      <name>smallestRoot</name>
+      <anchorfile>classEigen_1_1PolynomialSolverBase.html</anchorfile>
+      <anchor>afcc2f9f37f2641d8adc18e6a4be2425b</anchor>
+      <arglist>() const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::PolynomialSolverBase</name>
+    <filename>classEigen_1_1PolynomialSolverBase.html</filename>
+    <templarg>_Scalar</templarg>
+    <templarg>_Deg</templarg>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::RandomSetter</name>
+    <filename>classEigen_1_1RandomSetter.html</filename>
+    <templarg></templarg>
+    <templarg>MapTraits</templarg>
+    <templarg>OuterPacketBits</templarg>
+    <member kind="function">
+      <type>Index</type>
+      <name>nonZeros</name>
+      <anchorfile>classEigen_1_1RandomSetter.html</anchorfile>
+      <anchor>abe29bfb5f2d88cf2a50ffb577ec6f0a4</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>Scalar &amp;</type>
+      <name>operator()</name>
+      <anchorfile>classEigen_1_1RandomSetter.html</anchorfile>
+      <anchor>ac40b13c3b1b753f4f6aa8c6885eec706</anchor>
+      <arglist>(Index row, Index col)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>RandomSetter</name>
+      <anchorfile>classEigen_1_1RandomSetter.html</anchorfile>
+      <anchor>a96b5dce4700ec9a2875b2e5532e6ad85</anchor>
+      <arglist>(SparseMatrixType &amp;target)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~RandomSetter</name>
+      <anchorfile>classEigen_1_1RandomSetter.html</anchorfile>
+      <anchor>aa72ee212394d51949c7d8573d0c2fc05</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::SkylineInplaceLU</name>
+    <filename>classEigen_1_1SkylineInplaceLU.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1SkylineInplaceLU.html</anchorfile>
+      <anchor>a4993c97a669fa259c6574a18d547c117</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>flags</name>
+      <anchorfile>classEigen_1_1SkylineInplaceLU.html</anchorfile>
+      <anchor>a5f944e30665d7e6775691e5fc63e9dc7</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>RealScalar</type>
+      <name>precision</name>
+      <anchorfile>classEigen_1_1SkylineInplaceLU.html</anchorfile>
+      <anchor>abe5bb554978d7584795e2ebd121115aa</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFlags</name>
+      <anchorfile>classEigen_1_1SkylineInplaceLU.html</anchorfile>
+      <anchor>a9f29e5457641fae1b405b144a8206ca5</anchor>
+      <arglist>(int f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPrecision</name>
+      <anchorfile>classEigen_1_1SkylineInplaceLU.html</anchorfile>
+      <anchor>a7bc6e7b398a8db1c0d746fecbf367c1d</anchor>
+      <arglist>(RealScalar v)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SkylineInplaceLU</name>
+      <anchorfile>classEigen_1_1SkylineInplaceLU.html</anchorfile>
+      <anchor>a117b7ef0aaa2c7684fa235c0ab98e7cf</anchor>
+      <arglist>(MatrixType &amp;matrix, int flags=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>solve</name>
+      <anchorfile>classEigen_1_1SkylineInplaceLU.html</anchorfile>
+      <anchor>a62ff65772ecf9f45bba123bdff524b31</anchor>
+      <arglist>(const MatrixBase&lt; BDerived &gt; &amp;b, MatrixBase&lt; XDerived &gt; *x, const int transposed=0) const </arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>succeeded</name>
+      <anchorfile>classEigen_1_1SkylineInplaceLU.html</anchorfile>
+      <anchor>a9ff21cd2cb5ff6d358bb3eef3fbc4b3d</anchor>
+      <arglist>(void) const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::SkylineMatrix</name>
+    <filename>classEigen_1_1SkylineMatrix.html</filename>
+    <templarg></templarg>
+    <templarg>_Options</templarg>
+    <base>SkylineMatrixBase&lt; SkylineMatrix&lt; _Scalar, _Options &gt; &gt;</base>
+    <member kind="function">
+      <type>const internal::eval&lt; SkylineMatrix&lt; _Scalar, _Options &gt;, IsSkyline &gt;::type</type>
+      <name>eval</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>ac6c91e3542260895fca24299c04bac88</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>finalize</name>
+      <anchorfile>classEigen_1_1SkylineMatrix.html</anchorfile>
+      <anchor>a32d626626eee0bc4ade146973f6abb1c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>EIGEN_DONT_INLINE Scalar &amp;</type>
+      <name>insert</name>
+      <anchorfile>classEigen_1_1SkylineMatrix.html</anchorfile>
+      <anchor>a273dc3bb58dff1c75d591d2b4c6cd67a</anchor>
+      <arglist>(Index row, Index col)</arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>nonZeros</name>
+      <anchorfile>classEigen_1_1SkylineMatrix.html</anchorfile>
+      <anchor>abe29bfb5f2d88cf2a50ffb577ec6f0a4</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>reserve</name>
+      <anchorfile>classEigen_1_1SkylineMatrix.html</anchorfile>
+      <anchor>aa3d35ccb0154f2b4bbc5d39b1bc0fb81</anchor>
+      <arglist>(Index reserveSize, Index reserveUpperSize, Index reserveLowerSize)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resize</name>
+      <anchorfile>classEigen_1_1SkylineMatrix.html</anchorfile>
+      <anchor>a0c46dfd7eb3dd84cd7f7f344a949af12</anchor>
+      <arglist>(size_t rows, size_t cols)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setZero</name>
+      <anchorfile>classEigen_1_1SkylineMatrix.html</anchorfile>
+      <anchor>a47affd1a10b589811fc4828c1a2e0c6d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>size</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>a76f5bc8a03ec105ab4be1f2b91b7b5d5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Scalar</type>
+      <name>sum</name>
+      <anchorfile>classEigen_1_1SkylineMatrix.html</anchorfile>
+      <anchor>ac3b6fc39aff6c333023c66d1d20efbd1</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~SkylineMatrix</name>
+      <anchorfile>classEigen_1_1SkylineMatrix.html</anchorfile>
+      <anchor>a8dcadf12ac9d4bb2138aeed0157c679d</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::SkylineMatrixBase</name>
+    <filename>classEigen_1_1SkylineMatrixBase.html</filename>
+    <templarg>Derived</templarg>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>RowsAtCompileTime</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>adb49720dc49f7d4e4cf9adbf2948e409a38ab482a62bf46f6ed6dcc4e9dd0dddf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>ColsAtCompileTime</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>adb49720dc49f7d4e4cf9adbf2948e409ae943bdba893721a848dfcd03db756b22</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>SizeAtCompileTime</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>adb49720dc49f7d4e4cf9adbf2948e409ab30be5c02d7a124ec165d2ab6c5b05ed</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>IsVectorAtCompileTime</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>adb49720dc49f7d4e4cf9adbf2948e409a7e22277c8f0a1a76dd0d6c62e366b59f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>Flags</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>adb49720dc49f7d4e4cf9adbf2948e409a96296863b401484bc191339414c90e6b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>CoeffReadCost</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>adb49720dc49f7d4e4cf9adbf2948e409a17c43b803133ba4f73b417edcbfb8206</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>cols</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>aaca1908a5ec508a25ff0a8bca803e5f3</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>const internal::eval&lt; Derived, IsSkyline &gt;::type</type>
+      <name>eval</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>ac6c91e3542260895fca24299c04bac88</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>innerSize</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>acd9791e1914ad8761992e16032d49c54</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>nonZeros</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>abe29bfb5f2d88cf2a50ffb577ec6f0a4</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>outerSize</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>af080d3d3f82e0d4391f19af22a5eedb8</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>rows</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>a5552abd83dbd03c85cea6d61fd8875a5</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>Index</type>
+      <name>size</name>
+      <anchorfile>classEigen_1_1SkylineMatrixBase.html</anchorfile>
+      <anchor>a76f5bc8a03ec105ab4be1f2b91b7b5d5</anchor>
+      <arglist>() const </arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::SkylineStorage</name>
+    <filename>classEigen_1_1SkylineStorage.html</filename>
+    <templarg></templarg>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::Spline</name>
+    <filename>classEigen_1_1Spline.html</filename>
+    <templarg>_Scalar</templarg>
+    <templarg>_Dim</templarg>
+    <templarg>_Degree</templarg>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>Dimension</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>aac34dfe6c6b73b43a4656c9dce041034a33cede6b934046a29e456d31efa91468</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>Degree</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a0ed680fdb405e7195d9f14032851eebbabb19dc249d37afc2ee77d19133fb68d2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>SplineTraits&lt; Spline &gt;::BasisVectorType</type>
+      <name>BasisVectorType</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a660f20e92cb1ee49b3fb9a5e70c7fa86</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>SplineTraits&lt; Spline &gt;::ControlPointVectorType</type>
+      <name>ControlPointVectorType</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>ab7b2d980c535975a69e01687c8277f28</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>SplineTraits&lt; Spline &gt;::KnotVectorType</type>
+      <name>KnotVectorType</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a9400cd9f6e3863b84a40d08fe18434b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>SplineTraits&lt; Spline &gt;::PointType</type>
+      <name>PointType</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a47316f47c96482079eaeb911b8172d61</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>_Scalar</type>
+      <name>Scalar</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>aea29b63b6c32046ae9a471d82c5cf869</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>SplineTraits&lt; Spline &gt;::BasisDerivativeType</type>
+      <name>basisFunctionDerivatives</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a885a771c6c706e970caa3b7244bd02e3</anchor>
+      <arglist>(Scalar u, DenseIndex order) const </arglist>
+    </member>
+    <member kind="function">
+      <type>SplineTraits&lt; Spline, DerivativeOrder &gt;::BasisDerivativeType</type>
+      <name>basisFunctionDerivatives</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a4a9850d96911949630921b473c0faac4</anchor>
+      <arglist>(Scalar u, DenseIndex order=DerivativeOrder) const </arglist>
+    </member>
+    <member kind="function">
+      <type>SplineTraits&lt; Spline &gt;::BasisVectorType</type>
+      <name>basisFunctions</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>ae25ee31d76df0cb9f4d07f0c3a02602c</anchor>
+      <arglist>(Scalar u) const </arglist>
+    </member>
+    <member kind="function">
+      <type>const ControlPointVectorType &amp;</type>
+      <name>ctrls</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a1d17a6538090eb7dd12f6c3d366accfe</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>DenseIndex</type>
+      <name>degree</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a01716591756c5c0474d0b6c156da8887</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>SplineTraits&lt; Spline &gt;::DerivativeType</type>
+      <name>derivatives</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>aa53d1200e3bf388828c21a316c143d49</anchor>
+      <arglist>(Scalar u, DenseIndex order) const </arglist>
+    </member>
+    <member kind="function">
+      <type>SplineTraits&lt; Spline, DerivativeOrder &gt;::DerivativeType</type>
+      <name>derivatives</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a54d22bb658b8d6f09cff102591840f3d</anchor>
+      <arglist>(Scalar u, DenseIndex order=DerivativeOrder) const </arglist>
+    </member>
+    <member kind="function">
+      <type>const KnotVectorType &amp;</type>
+      <name>knots</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>adcb07c9a66c0a8a1ec577e49a39baeaf</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>PointType</type>
+      <name>operator()</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a785602b502f082dc3e715ffcb89295b4</anchor>
+      <arglist>(Scalar u) const </arglist>
+    </member>
+    <member kind="function">
+      <type>DenseIndex</type>
+      <name>span</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a98dc7c576ebbd7017726f5937eecc942</anchor>
+      <arglist>(Scalar u) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Spline</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>add9cdf708ac9e046dc979bcaff83e600</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Spline</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>acc9568b7f7c5c82ccac314515b886c8d</anchor>
+      <arglist>(const OtherVectorType &amp;knots, const OtherArrayType &amp;ctrls)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Spline</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a2aac5d37c74ed3b574f922ef77c7a936</anchor>
+      <arglist>(const Spline&lt; Scalar, Dimension, OtherDegree &gt; &amp;spline)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static BasisVectorType</type>
+      <name>BasisFunctions</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>a514f450de91b7ff3cc05d47d8e350e44</anchor>
+      <arglist>(Scalar u, DenseIndex degree, const KnotVectorType &amp;knots)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static DenseIndex</type>
+      <name>Span</name>
+      <anchorfile>classEigen_1_1Spline.html</anchorfile>
+      <anchor>ac8dcf3466d6e8e90aacfb1a91ba81bb2</anchor>
+      <arglist>(typename SplineTraits&lt; Spline &gt;::Scalar u, DenseIndex degree, const typename SplineTraits&lt; Spline &gt;::KnotVectorType &amp;knots)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>Eigen::SplineFitting</name>
+    <filename>structEigen_1_1SplineFitting.html</filename>
+    <templarg></templarg>
+    <member kind="function" static="yes">
+      <type>static SplineType</type>
+      <name>Interpolate</name>
+      <anchorfile>structEigen_1_1SplineFitting.html</anchorfile>
+      <anchor>adff4f85f223a278bc7ebae74e53a8441</anchor>
+      <arglist>(const PointArrayType &amp;pts, DenseIndex degree)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static SplineType</type>
+      <name>Interpolate</name>
+      <anchorfile>structEigen_1_1SplineFitting.html</anchorfile>
+      <anchor>a2a258a77c288288e364bb866814b991f</anchor>
+      <arglist>(const PointArrayType &amp;pts, DenseIndex degree, const KnotVectorType &amp;knot_parameters)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>Eigen::SplineTraits&lt; Spline&lt; _Scalar, _Dim, _Degree &gt;, _DerivativeOrder &gt;</name>
+    <filename>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01__DerivativeOrder_01_4.html</filename>
+    <templarg></templarg>
+    <templarg>_Dim</templarg>
+    <templarg>_Degree</templarg>
+    <templarg>_DerivativeOrder</templarg>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>OrderAtCompileTime</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01__DerivativeOrder_01_4.html</anchorfile>
+      <anchor>ab48899087cc647f0f791ed0c459adc53a8a837b79ddf3cc39fb7afd45e928d319</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>NumOfDerivativesAtCompileTime</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01__DerivativeOrder_01_4.html</anchorfile>
+      <anchor>a458e651af6690959efa2afb96be7d609a8f6caf32904b2de5953e73ec60a5b3e2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; _Scalar, Dynamic, Dynamic, RowMajor, NumOfDerivativesAtCompileTime, OrderAtCompileTime &gt;</type>
+      <name>BasisDerivativeType</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01__DerivativeOrder_01_4.html</anchorfile>
+      <anchor>a130cc6d2c0249bbc3b94e083a61bdc84</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; _Scalar, _Dim, Dynamic, ColMajor, _Dim, NumOfDerivativesAtCompileTime &gt;</type>
+      <name>DerivativeType</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01__DerivativeOrder_01_4.html</anchorfile>
+      <anchor>ab8df7bb5d8bd3f281ef88e2732782069</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>Eigen::SplineTraits&lt; Spline&lt; _Scalar, _Dim, _Degree &gt;, Dynamic &gt;</name>
+    <filename>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</filename>
+    <templarg></templarg>
+    <templarg>_Dim</templarg>
+    <templarg>_Degree</templarg>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>Dimension</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a0944a4353780132eeab7b06e3e42291da33cede6b934046a29e456d31efa91468</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>Degree</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a4790f45dcc812c1b00184a2edccdddf5abb19dc249d37afc2ee77d19133fb68d2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>OrderAtCompileTime</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a4caf8d8f829279fba122163d961608a4a8a837b79ddf3cc39fb7afd45e928d319</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <type>@</type>
+      <name>NumOfDerivativesAtCompileTime</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a96a58e29e8dbf2b5bdeb775cba46556ea8f6caf32904b2de5953e73ec60a5b3e2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; Scalar, Dynamic, Dynamic, RowMajor, NumOfDerivativesAtCompileTime, OrderAtCompileTime &gt;</type>
+      <name>BasisDerivativeType</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a8ca79ab8386f79dbf0fb45486cc84128</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; Scalar, 1, OrderAtCompileTime &gt;</type>
+      <name>BasisVectorType</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a6664df4792a5ed7622ffd119f19bcd74</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; Scalar, Dimension, Dynamic &gt;</type>
+      <name>ControlPointVectorType</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>ad89754c9fa878cc6ef887dc13250000f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; Scalar, Dimension, Dynamic, ColMajor, Dimension, NumOfDerivativesAtCompileTime &gt;</type>
+      <name>DerivativeType</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a77c1b561ddb6e0d9668cde5b904e093f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; Scalar, 1, Dynamic &gt;</type>
+      <name>KnotVectorType</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a67e7e78e13e789cde576300585e9c6b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Array&lt; Scalar, Dimension, 1 &gt;</type>
+      <name>PointType</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>a4048ab7e375db515c882c182a46002c4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>_Scalar</type>
+      <name>Scalar</name>
+      <anchorfile>structEigen_1_1SplineTraits_3_01Spline_3_01__Scalar_00_01__Dim_00_01__Degree_01_4_00_01Dynamic_01_4.html</anchorfile>
+      <anchor>aea29b63b6c32046ae9a471d82c5cf869</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>Eigen::StdMapTraits</name>
+    <filename>structEigen_1_1StdMapTraits.html</filename>
+    <templarg></templarg>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::StdStemFunctions</name>
+    <filename>classEigen_1_1StdStemFunctions.html</filename>
+    <templarg></templarg>
+    <member kind="function" static="yes">
+      <type>static Scalar</type>
+      <name>cos</name>
+      <anchorfile>classEigen_1_1StdStemFunctions.html</anchorfile>
+      <anchor>a0a4a260b381846e6c0f4a5632bce8fab</anchor>
+      <arglist>(Scalar x, int n)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Scalar</type>
+      <name>cosh</name>
+      <anchorfile>classEigen_1_1StdStemFunctions.html</anchorfile>
+      <anchor>a2ac92720a5d389809c8d8aa85309835b</anchor>
+      <arglist>(Scalar x, int n)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Scalar</type>
+      <name>exp</name>
+      <anchorfile>classEigen_1_1StdStemFunctions.html</anchorfile>
+      <anchor>aa0efe3d96f1c526d23a8856ef9fe1e12</anchor>
+      <arglist>(Scalar x, int)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Scalar</type>
+      <name>sin</name>
+      <anchorfile>classEigen_1_1StdStemFunctions.html</anchorfile>
+      <anchor>a5c94aa19b5339d960ead67bee1d8bf0c</anchor>
+      <arglist>(Scalar x, int n)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Scalar</type>
+      <name>sinh</name>
+      <anchorfile>classEigen_1_1StdStemFunctions.html</anchorfile>
+      <anchor>a6529c5799980600a8ef928c9eb15065a</anchor>
+      <arglist>(Scalar x, int n)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Eigen::SVDBase</name>
+    <filename>classEigen_1_1SVDBase.html</filename>
+    <templarg>_MatrixType</templarg>
+    <member kind="function">
+      <type>SVDBase &amp;</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>a83297cc5d915af5132f5161b62a7a650</anchor>
+      <arglist>(const MatrixType &amp;matrix, unsigned int computationOptions)</arglist>
+    </member>
+    <member kind="function">
+      <type>SVDBase &amp;</type>
+      <name>compute</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>a7af4db91caadd1b5e12cdc1384a18bd7</anchor>
+      <arglist>(const MatrixType &amp;matrix)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>SVDBase</name>
+      <anchorfile>classEigen_1_1SVDBase.html</anchorfile>
+      <anchor>aa64c67571945053f2fe3ec5163045bbd</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>AutoDiff</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/AutoDiff/</path>
+    <filename>dir_e9c7cec04c0299997e4d2fad389d6697.html</filename>
+    <file>AutoDiffJacobian.h</file>
+    <file>AutoDiffScalar.h</file>
+    <file>AutoDiffVector.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>BVH</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/BVH/</path>
+    <filename>dir_011fa4c0a2a2be8f7478ec671d7f02ad.html</filename>
+    <file>BVAlgorithms.h</file>
+    <file>KdBVH.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>doc</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/doc/</path>
+    <filename>dir_68628b17dd13d3e61e1f8d1b27fa624b.html</filename>
+    <file>eigendoxy_layout.xml.in</file>
+  </compound>
+  <compound kind="dir">
+    <name>Eigen</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/</path>
+    <filename>dir_29809fa47ce60ef31f24f2a7347b6bd0.html</filename>
+    <dir>src</dir>
+    <file>AdolcForward</file>
+    <file>AlignedVector3</file>
+    <file>ArpackSupport</file>
+    <file>AutoDiff</file>
+    <file>BVH</file>
+    <file>FFT</file>
+    <file>IterativeSolvers</file>
+    <file>KroneckerProduct</file>
+    <file>LevenbergMarquardt</file>
+    <file>MatrixFunctions</file>
+    <file>MoreVectorization</file>
+    <file>MPRealSupport</file>
+    <file>NonLinearOptimization</file>
+    <file>NumericalDiff</file>
+    <file>OpenGLSupport</file>
+    <file>Polynomials</file>
+    <file>Skyline</file>
+    <file>SparseExtra</file>
+    <file>Splines</file>
+    <file>SVD</file>
+  </compound>
+  <compound kind="dir">
+    <name>Eigenvalues</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/Eigenvalues/</path>
+    <filename>dir_b6b627e9ff2b8045141b7e5d27fb595e.html</filename>
+    <file>ArpackSelfAdjointEigenSolver.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>FFT</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/FFT/</path>
+    <filename>dir_738d400527a5ac9a8e79e2cb6fcd5d6e.html</filename>
+    <file>ei_fftw_impl.h</file>
+    <file>ei_kissfft_impl.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>IterativeSolvers</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/IterativeSolvers/</path>
+    <filename>dir_e874e9b682d2b4d40c956b2d315586af.html</filename>
+    <file>ConstrainedConjGrad.h</file>
+    <file>DGMRES.h</file>
+    <file>GMRES.h</file>
+    <file>IncompleteCholesky.h</file>
+    <file>IncompleteLU.h</file>
+    <file>IterationController.h</file>
+    <file>MINRES.h</file>
+    <file>Scaling.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>KroneckerProduct</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/KroneckerProduct/</path>
+    <filename>dir_ed3be8fa8e942adb68989c4f4ea9f422.html</filename>
+    <file>KroneckerTensorProduct.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>LevenbergMarquardt</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/LevenbergMarquardt/</path>
+    <filename>dir_1d5f3beacc31a7a179ac288976f8d037.html</filename>
+    <file>LevenbergMarquardt/LevenbergMarquardt.h</file>
+    <file>LMcovar.h</file>
+    <file>LMonestep.h</file>
+    <file>LMpar.h</file>
+    <file>LMqrsolv.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>MatrixFunctions</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/MatrixFunctions/</path>
+    <filename>dir_1f149007070a2152af548519e7cb4af2.html</filename>
+    <file>MatrixExponential.h</file>
+    <file>MatrixFunction.h</file>
+    <file>MatrixFunctionAtomic.h</file>
+    <file>MatrixLogarithm.h</file>
+    <file>MatrixPower.h</file>
+    <file>MatrixSquareRoot.h</file>
+    <file>StemFunction.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>MoreVectorization</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/MoreVectorization/</path>
+    <filename>dir_7bd093be953e934e6bf685c3e0dc0f7b.html</filename>
+    <file>MathFunctions.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>NonLinearOptimization</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/NonLinearOptimization/</path>
+    <filename>dir_07781656bf044805e544b7c9cb082c4f.html</filename>
+    <file>chkder.h</file>
+    <file>covar.h</file>
+    <file>dogleg.h</file>
+    <file>fdjac1.h</file>
+    <file>HybridNonLinearSolver.h</file>
+    <file>NonLinearOptimization/LevenbergMarquardt.h</file>
+    <file>lmpar.h</file>
+    <file>qrsolv.h</file>
+    <file>r1mpyq.h</file>
+    <file>r1updt.h</file>
+    <file>rwupdt.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>NumericalDiff</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/NumericalDiff/</path>
+    <filename>dir_e5dd52d4d12a60699db543f018d55326.html</filename>
+    <file>NumericalDiff.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>Polynomials</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/Polynomials/</path>
+    <filename>dir_83e868a917ae5887a14cdd7a1688d364.html</filename>
+    <file>Companion.h</file>
+    <file>PolynomialSolver.h</file>
+    <file>PolynomialUtils.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>Skyline</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/Skyline/</path>
+    <filename>dir_e70fd94e73d53991326f4b6062e32055.html</filename>
+    <file>SkylineInplaceLU.h</file>
+    <file>SkylineMatrix.h</file>
+    <file>SkylineMatrixBase.h</file>
+    <file>SkylineProduct.h</file>
+    <file>SkylineStorage.h</file>
+    <file>SkylineUtil.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>SparseExtra</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/SparseExtra/</path>
+    <filename>dir_1c7b6c8cf5f3256715f857a2ae67d479.html</filename>
+    <file>BlockOfDynamicSparseMatrix.h</file>
+    <file>DynamicSparseMatrix.h</file>
+    <file>MarketIO.h</file>
+    <file>MatrixMarketIterator.h</file>
+    <file>RandomSetter.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>Splines</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/Splines/</path>
+    <filename>dir_708d9e50552063642c20163303e1ea38.html</filename>
+    <file>Spline.h</file>
+    <file>SplineFitting.h</file>
+    <file>SplineFwd.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>src</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/</path>
+    <filename>dir_9d2ab287cabc6b1c01c62f1dd5b97ca8.html</filename>
+    <dir>AutoDiff</dir>
+    <dir>BVH</dir>
+    <dir>Eigenvalues</dir>
+    <dir>FFT</dir>
+    <dir>IterativeSolvers</dir>
+    <dir>KroneckerProduct</dir>
+    <dir>LevenbergMarquardt</dir>
+    <dir>MatrixFunctions</dir>
+    <dir>MoreVectorization</dir>
+    <dir>NonLinearOptimization</dir>
+    <dir>NumericalDiff</dir>
+    <dir>Polynomials</dir>
+    <dir>Skyline</dir>
+    <dir>SparseExtra</dir>
+    <dir>Splines</dir>
+    <dir>SVD</dir>
+  </compound>
+  <compound kind="dir">
+    <name>SVD</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/Eigen/src/SVD/</path>
+    <filename>dir_7a561c0c57074244bccf90b9e07b2f8d.html</filename>
+    <file>BDCSVD.h</file>
+    <file>JacobiSVD.h</file>
+    <file>SVDBase.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>unsupported</name>
+    <path>/home/benjamin/my_libs/EIGEN/unsupported/</path>
+    <filename>dir_f050d151337269ddd76e14c67a437ecc.html</filename>
+    <dir>doc</dir>
+    <dir>Eigen</dir>
+  </compound>
+  <compound kind="page">
+    <name>index</name>
+    <title>Eigen&apos;s unsupported modules</title>
+    <filename>index</filename>
+  </compound>
+</tagfile>

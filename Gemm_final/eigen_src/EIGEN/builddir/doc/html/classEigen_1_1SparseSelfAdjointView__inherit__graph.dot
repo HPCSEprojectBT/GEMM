@@ -1,0 +1,8 @@
+digraph "SparseSelfAdjointView&lt; MatrixType, UpLo &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{SparseSelfAdjointView\l\< MatrixType, UpLo \>\n|# m_countPerCol\l# m_countPerRow\l# m_matrix\l|+ cols()\l+ evalTo()\l+ evalTo()\l+ matrix()\l+ matrix()\l+ operator*()\l+ operator*()\l+ operator=()\l+ operator=()\l+ operator=()\l+ rankUpdate()\l+ rankUpdate()\l+ rows()\l+ SparseSelfAdjointView()\l+ twistedBy()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{EigenBase\< SparseSelfAdjoint\lView\< MatrixType, UpLo \> \>\n||+ addTo()\l+ applyThisOnTheLeft()\l+ applyThisOnTheRight()\l+ cols()\l+ const_cast_derived()\l+ const_derived()\l+ derived()\l+ derived()\l+ evalTo()\l+ rows()\l+ size()\l+ subTo()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structEigen_1_1EigenBase.html"];
+}

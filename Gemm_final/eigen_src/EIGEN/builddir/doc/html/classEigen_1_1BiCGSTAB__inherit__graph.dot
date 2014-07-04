@@ -1,0 +1,8 @@
+digraph "BiCGSTAB&lt; _MatrixType, _Preconditioner &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{BiCGSTAB\< _MatrixType,\l _Preconditioner \>\n||+ _solve()\l+ _solveWithGuess()\l+ BiCGSTAB()\l+ BiCGSTAB()\l+ solveWithGuess()\l+ ~BiCGSTAB()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{IterativeSolverBase\l\< BiCGSTAB\< _MatrixType,\l _Preconditioner \> \>\n|# m_analysisIsOk\l# m_error\l# m_factorizationIsOk\l# m_info\l# m_isInitialized\l# m_iterations\l# m_maxIterations\l# m_preconditioner\l# m_tolerance\l# mp_matrix\l|+ _solve_sparse()\l+ analyzePattern()\l+ cols()\l+ compute()\l+ derived()\l+ derived()\l+ error()\l+ factorize()\l+ info()\l+ iterations()\land 12 more...\l# init()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1IterativeSolverBase.html"];
+}

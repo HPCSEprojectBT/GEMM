@@ -1,0 +1,8 @@
+digraph "SuperILU&lt; _MatrixType &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{SuperILU\< _MatrixType \>\n||+ analyzePattern()\l+ factorize()\l+ SuperILU()\l+ SuperILU()\l+ ~SuperILU()\l# init()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{SuperLUBase\< _MatrixType,\l SuperILU\< _MatrixType \> \>\n|# m_analysisIsOk\l# m_extractedDataAreDirty\l# m_factorizationIsOk\l# m_info\l# m_isInitialized\l# m_l\l# m_matrix\l# m_p\l# m_q\l# m_sluA\land 13 more...\l|+ analyzePattern()\l+ cols()\l+ compute()\l+ derived()\l+ derived()\l+ dumpMemory()\l+ info()\l+ options()\l+ rows()\l+ solve()\l+ solve()\l+ SuperLUBase()\l+ ~SuperLUBase()\l# clearFactors()\l# extractData()\l# init()\l# initFactorization()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1SuperLUBase.html"];
+}
