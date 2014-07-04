@@ -1,6 +1,6 @@
 CUDA_COMPILER = nvcc
 COMPILER = CC
-EIGEN_PATH = ../eigen_src/EIGEN
+EIGEN_PATH = ~/libs/eigen
 HEADERS = gemm.h gemm.cuh
 
 all: gemm_test
