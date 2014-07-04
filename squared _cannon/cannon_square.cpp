@@ -18,6 +18,7 @@ int bt_tag = 77;
 #include "timer.h"
 #include "output.hpp"
 #include "matrix_setup.hpp"
+#include "send_blocks.hpp"
 
 
 
@@ -138,15 +139,16 @@ int main (int argc, char** argv)
 
 		MPI_Barrier(MPI_COMM_WORLD);
 
-		// Sends to the left, recieve from right
-		MPI_Sendrecv(&A_loc.data()[0],1, A_Block_Type,left, lr_tag,
-			&A_loc_tmp.data()[0],1, A_Block_Type, right, lr_tag,
-			Comm_Cart, &status);
-
-		// Sends to the top, recieve from bot
-		MPI_Sendrecv(&B_loc.data()[0],1, B_Block_Type,top, bt_tag,
-			&B_loc_tmp.data()[0],1, B_Block_Type, bottom, bt_tag,
-			Comm_Cart, &status);
+		bool non_blocking =1;
+		if(!non_blocking){
+			send_ghostcells_blocking(status, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom);
+		}
+		else{
+			send_ghostcells_non_blocking(mycoords, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom);
+			if(rank == 0){
+				cout << "system.out.println(fak this)" << endl;
+			}
+		}
 	
 		A_loc_tmp.swap(A_loc);
 		B_loc_tmp.swap(B_loc);

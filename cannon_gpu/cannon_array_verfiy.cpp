@@ -74,10 +74,8 @@ int main (int argc, char** argv)
 
 	float **A_loc_tmp;
 	float **B_loc_tmp;
-	float **C_step;
 	A_loc_tmp = alloc_2d_init(n_loc,n_loc);
 	B_loc_tmp = alloc_2d_init(n_loc,n_loc);
-	C_step = alloc_2d_init(n_loc,n_loc);
 
 
 
@@ -106,12 +104,10 @@ int main (int argc, char** argv)
 	float **C_correct;
 	C_correct = alloc_2d_init(n,n);
 
-	float val = 1;
 	for (int j=0; j<n ; ++j) {
         for (int i=0; i<n; ++i) {
-            A_glob[i][j]=val;
-            B_glob[i][j]=10*val;
-            val++;
+            A_glob[i][j]=1.47;
+            B_glob[i][j]=1.74;
         }
 	} 
 
@@ -165,20 +161,11 @@ int main (int argc, char** argv)
 	scatter_matrix(rank,m,n_loc, A_glob, A_loc, Comm_Cart, status);
 	scatter_matrix(rank,m,n_loc, B_glob, B_loc, Comm_Cart, status);
 
-	/*
-	if (rank==0) cout << "after scattering A matrix" << endl;
-	print_matrix_distribution(rank, size, A_loc, A_glob, n_loc, n);
-	
-	gather_matrix(rank,m,n_loc, A_glob, A_loc, Comm_Cart, status);
 
-	if (rank==0) cout << "after gathering the same damn matrix" << endl;
-	print_matrix_distribution(rank, size, A_loc, A_glob, n_loc, n);
-	*/
 	
 	// Initialisation of the matrix
 	for(int i=0; i< n_loc ; i++){
 		for(int j=0; j < n_loc; j++){
-			C_step[i][j]=0;
 			C_loc[i][j] =0;
 		}
 	}
@@ -199,25 +186,15 @@ int main (int argc, char** argv)
 	for(int iterations=0; iterations < number_of_steps; ++iterations){
 		// C_step = A_loc*B_loc;
 		// C_loc = C_loc + C_step;
-	
-		for(unsigned i=0;i<n_loc;i++){
-			for(unsigned j=0;j<n_loc;j++){
-				C_step[i][j] =0;
-			}
-		}
+
 		for(unsigned i=0;i<n_loc;i++){
 			for(unsigned j=0;j<n_loc;j++){
 				for(unsigned k=0;k<n_loc;k++){
-					C_step[i][j] += A_loc[i][k] * B_loc[k][j];
+					C_loc[i][j] += A_loc[i][k] * B_loc[k][j];
 				}
 			}
 		}
 
-		for(unsigned i=0;i<n_loc;i++){
-			for(unsigned j=0;j<n_loc;j++){
-				C_loc[i][j] += C_step[i][j];
-			}
-		}
 
 		MPI_Barrier(MPI_COMM_WORLD);
 

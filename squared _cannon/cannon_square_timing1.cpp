@@ -10,28 +10,18 @@
 //#define PRINT_DEBUG
 
 using namespace std;
+using Eigen::MatrixXd;
 
 int n; //x and y Dimension of A,B and C
+MPI_Datatype A_Block_Type, B_Block_Type, cont_type;
 int lr_tag = 7;
 int bt_tag = 77;
 char timing_file[160];
-
-float **alloc_2d_init(int rows, int cols) {
-    float *data = (float *)malloc(rows*cols*sizeof(float));
-    float **array= (float **)malloc(rows*sizeof(float*));
-    for (int i=0; i<rows; i++)
-        array[i] = &(data[cols*i]);
-
-    return array;
-}
 
 #include "timer.h"
 #include "output.hpp"
 #include "matrix_setup.hpp"
 #include "send_blocks.hpp"
-
-
-
 
 
 
@@ -47,7 +37,7 @@ int main (int argc, char** argv)
 
 	if(argc != 4){
 		if(rank == 0){
-			cout << "usage: mpirun -np <num nodes> " << argv[0] << " <size per dimension> <number of outputfile> <blocking(0) / non_blocking(1)>" << endl;
+			cout << "usage: mpirun -np <num_nodes> " << argv[0] << " size per dimension, out_number(filename), blocking / non_blocking" << endl;
 		}
 
 		return 0;
@@ -64,18 +54,21 @@ int main (int argc, char** argv)
 	assert((n%(int)m)== 0) ;//n has to be a multiple of sqrt(n_procs)
 
 	int n_loc = n/m;
+	MatrixXd A_loc(n_loc,n_loc);
+	MatrixXd B_loc(n_loc,n_loc);
+	MatrixXd C_loc(n_loc,n_loc);
 
-	float **A_loc;
-	float **B_loc;
-	float **C_loc;
-	A_loc = alloc_2d_init(n_loc,n_loc);
-	B_loc = alloc_2d_init(n_loc,n_loc);
-	C_loc = alloc_2d_init(n_loc,n_loc);
+	MatrixXd A_loc_tmp(n_loc,n_loc);
+	MatrixXd B_loc_tmp(n_loc,n_loc);
+	MatrixXd C_step(n_loc,n_loc);
 
-	float **A_loc_tmp;
-	float **B_loc_tmp;
-	A_loc_tmp = alloc_2d_init(n_loc,n_loc);
-	B_loc_tmp = alloc_2d_init(n_loc,n_loc);
+	MPI_Type_contiguous(n_loc*n_loc,MPI_DOUBLE, &A_Block_Type); //prepare type for bottom/top sends
+	MPI_Type_commit(&A_Block_Type);
+	MPI_Type_contiguous(n_loc*n_loc,MPI_DOUBLE, &B_Block_Type); //prepare type for bottom/top sends
+	MPI_Type_commit(&B_Block_Type);
+	MPI_Type_contiguous(n_loc*n_loc,MPI_DOUBLE, & cont_type);
+    MPI_Type_commit(&cont_type); 
+
 
 
 	//create cartesian grid topology
@@ -92,13 +85,20 @@ int main (int argc, char** argv)
 
 	MPI_Cart_shift(Comm_Cart, 0, -1, &bottom, &top);
 	MPI_Cart_shift(Comm_Cart, 1, 1, &left, &right);
-	
+
+	#ifdef PRINT_DEBUG
+	print_neighbours(rank, left, right, top, bottom, size);
+	//////////////7 added
+	print_coordiantes(mycoords, rank, cart_rank, size);
+	#endif
+
 	// Initialisation of the matrix
 	for(int i=0; i< n_loc ; i++)
 		for(int j=0; j < n_loc; j++){
-			A_loc[i][j]  =1.74;
-			B_loc[i][j]  =1.47;
-			C_loc[i][j]  =0;
+			A_loc(i,j) =1.74;
+			B_loc(i,j) =1.47;
+			C_step(i,j)=0;
+			C_loc(i,j) =0;
 		}
 
 
@@ -108,48 +108,42 @@ int main (int argc, char** argv)
 		t.tic();
 	}
 
-	initial_send(Comm_Cart,rank,A_loc_tmp,A_loc,B_loc_tmp,B_loc,status, size,n_loc);
-
-
-	swap(A_loc,A_loc_tmp);
-	swap(B_loc,B_loc_tmp);
-
-
-
+	initial_send(Comm_Cart,rank,A_loc_tmp,A_loc,B_loc_tmp,B_loc,status, size);
+	A_loc_tmp.swap(A_loc);
+	B_loc_tmp.swap(B_loc);
+	
+#ifdef PRINT_DEBUG	
+	print_abc(A_loc,B_loc, C_step, size, rank);
+#endif
 
 	// Doing the actual cannon's alogrithm
 	for(int iterations=0; iterations < number_of_steps; ++iterations){
-		// C_step = A_loc*B_loc;
-		// C_loc = C_loc + C_step;
-	
-		for(unsigned i=0;i<n_loc;i++){
-			for(unsigned j=0;j<n_loc;j++){
-				for(unsigned k=0;k<n_loc;k++){
-					C_loc[i][j] += A_loc[i][k] * B_loc[k][j];
-				}
-			}
-		}
+		C_step = A_loc*B_loc;
+		C_loc = C_loc + C_step;
+
+#ifdef PRINT_DEBUG
+		print_stepcount(iterations, rank);
+		print_abc(A_loc,B_loc, C_step, size, rank);
+#endif		
 
 		MPI_Barrier(MPI_COMM_WORLD);
 
 
 
-		//send_matrices_blocking(status, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom, n_loc);
-		
-		if(!non_blocking){
-			send_matrices_blocking(status, A_loc_tmp, A_loc, B_loc_tmp, B_loc,  Comm_Cart, left, right, top, bottom, n_loc);
+
+		if(non_blocking){
+			send_ghostcells_blocking(status, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom);
 		}
 		else{
-			send_matrices_non_blocking(mycoords, A_loc_tmp, A_loc,  B_loc_tmp, B_loc,  Comm_Cart, left, right, top, bottom, n_loc);
+			send_ghostcells_non_blocking(mycoords, A_loc, A_loc_tmp, B_loc, B_loc_tmp, Comm_Cart, left, right, top, bottom);
 			if(rank == 0){
 				cout << "system.out.println(fak this)" << endl;
 			}
 		}
-		swap(A_loc,A_loc_tmp);
-		swap(B_loc,B_loc_tmp);
+		A_loc_tmp.swap(A_loc);
+		B_loc_tmp.swap(B_loc);
 
 	}
-
 
 
 
