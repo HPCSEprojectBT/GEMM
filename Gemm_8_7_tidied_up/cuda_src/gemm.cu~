@@ -32,8 +32,8 @@ void MatMul( float * a, float * b, float * c, unsigned n) {
 		err = cudaMalloc((void**)&cd, array_size);
 		printf("CUDA malloc C: %s\n",cudaGetErrorString(err));
 
-		err = cudaMemcpy(cd, c, array_size, cudaMemcpyHostToDevice);
-		printf("Copy C to device: %s\n",cudaGetErrorString(err));
+		//err = cudaMemcpy(cd, c, array_size, cudaMemcpyHostToDevice);
+		//printf("Copy C to device: %s\n",cudaGetErrorString(err));
 	
 		// Invoke kernel
 		dim3 dimBlock(BLOCK_SIZE_X, BLOCK_SIZE_Y);
@@ -66,5 +66,5 @@ __global__ void MatMulKernel(float * ad, float * bd, float * cd, unsigned n) {
 		if(row >= n || col >= n) return;
 		for (int e = 0; e < n; ++e)
 			Cvalue += (ad[row+e*n]) * (bd[e + col*n]);
-		cd[row + col*n] += Cvalue;
+		cd[row + col*n] = Cvalue;
 }
