@@ -19,6 +19,7 @@ clean:
 	rm -f *.o
 clean_slurm:
 	rm -f slurm*
+	rm -f output_thread_*
 
 batch:
 	sbatch  batch_cuda.txt
