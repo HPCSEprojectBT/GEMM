@@ -1,0 +1,8 @@
+digraph "SimplicialLLT&lt; _MatrixType, _UpLo &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{SimplicialLLT\< _MatrixType,\l _UpLo \>\n||+ analyzePattern()\l+ compute()\l+ determinant()\l+ factorize()\l+ matrixL()\l+ matrixU()\l+ SimplicialLLT()\l+ SimplicialLLT()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{SimplicialCholeskyBase\l\< SimplicialLLT\< _MatrixType,\l _UpLo \> \>\n|# m_analysisIsOk\l# m_diag\l# m_factorizationIsOk\l# m_info\l# m_isInitialized\l# m_matrix\l# m_nonZerosPerCol\l# m_P\l# m_parent\l# m_Pinv\l# m_shiftOffset\l# m_shiftScale\l|+ cols()\l+ derived()\l+ derived()\l+ info()\l+ permutationP()\l+ permutationPinv()\l+ rows()\l+ setShift()\l+ SimplicialCholeskyBase()\l+ SimplicialCholeskyBase()\l+ solve()\l+ solve()\l+ ~SimplicialCholeskyBase()\l# analyzePattern()\l# analyzePattern_preordered()\l# compute()\l# factorize()\l# factorize_preordered()\l# ordering()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1SimplicialCholeskyBase.html"];
+}

@@ -1,0 +1,8 @@
+digraph "MatrixBase&lt; Derived &gt;"
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="{MatrixBase\< Derived \>\n||+ adjoint()\l+ adjointInPlace()\l+ applyHouseholderOnTheLeft()\l+ applyHouseholderOnTheRight()\l+ applyOnTheLeft()\l+ applyOnTheLeft()\l+ applyOnTheRight()\l+ applyOnTheRight()\l+ array()\l+ array()\land 120 more...\l+ Identity()\l+ Identity()\l+ Unit()\l+ Unit()\l+ UnitW()\l+ UnitX()\l+ UnitY()\l+ UnitZ()\l# MatrixBase()\l# operator+=()\l# operator-=()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="FreeSans"];
+  Node2 [label="{DenseBase\< Derived \>\n||+ all()\l+ allFinite()\l+ any()\l+ block()\l+ block()\l+ block()\l+ block()\l+ block()\l+ block()\l+ bottomLeftCorner()\land 136 more...\l+ Constant()\l+ Constant()\l+ Constant()\l+ LinSpaced()\l+ LinSpaced()\l+ LinSpaced()\l+ LinSpaced()\l+ NullaryExpr()\l+ NullaryExpr()\l+ NullaryExpr()\land 9 more...\l# checkTransposeAliasing()\l# DenseBase()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEigen_1_1DenseBase.html",tooltip="Base class for all dense matrices, vectors, and arrays. "];
+}

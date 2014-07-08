@@ -1,0 +1,16 @@
+Here is the matrix m:
+ 7  6 -3
+-2  9  6
+ 6 -6 -5
+And here is the matrix n:
+ 1 -3  9
+ 0  0  3
+ 3  9  5
+The coefficient-wise product of m and n is:
+  7 -18 -27
+  0   0  18
+ 18 -54 -25
+Taking the cube of the coefficients of m yields:
+ 343  216  -27
+  -8  729  216
+ 216 -216 -125
