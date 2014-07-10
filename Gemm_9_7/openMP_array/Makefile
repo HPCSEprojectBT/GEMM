@@ -1,4 +1,4 @@
-COMPILER 	= CC
+COMPILER 	= mpiCC
 OPTI		= -O3
 OMP		= -fopenmp
 LOAD_EIGEN	= -I ../eigen_src/EIGEN

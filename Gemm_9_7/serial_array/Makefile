@@ -1,4 +1,4 @@
-COMPILER 	= CC
+COMPILER 	= mpiCC
 OPTI		= -O3
 OMP		= -fopenmp
 #===LOAD_EIGEN	= -I ../array_src/EIGEN

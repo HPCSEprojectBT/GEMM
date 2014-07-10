@@ -6,6 +6,7 @@
 #include <string>
 #include <fstream>
 #include <cstdlib>
+#include <iomanip>
 
 #include <omp.h>
 #define VERIFY
@@ -48,17 +49,16 @@ int main (int argc, char** argv)
 	MPI_Comm_size(MPI_COMM_WORLD,&size);
 	MPI_Comm_rank(MPI_COMM_WORLD,&rank);
 
-	if(argc != 4){
-		if(rank == 0){
-			cout << "usage: mpirun -np <num nodes> " << argv[0] << " <size per dimension> <number of outputfile> <blocking(0) / non_blocking(1)>" << endl;
+		if(argc != 4){
+				if(rank == 0){
+						cout << "usage: mpirun -np <num nodes> " << argv[0] << " <size per dimension> <number of outputfile> <number of runs>" << endl;
+				}
+				return 0;
 		}
-
-		return 0;
-	}
-
-	n = atoi(argv[1]);
-	sprintf(timing_file,"timing_%d.csv",atoi(argv[2]));
-	bool non_blocking = atoi(argv[3]);
+		int n_runs;
+		n = atoi(argv[1]);
+		sprintf(timing_file,"timing_omp_array_%d.csv",atoi(argv[2]));
+		n_runs = atoi(argv[3]);
 
 	#ifndef LOCAL_
 		num_threads=16;
@@ -84,6 +84,15 @@ int main (int argc, char** argv)
 	A_loc_tmp = alloc_2d_init(n_loc,n_loc);
 	B_loc_tmp = alloc_2d_init(n_loc,n_loc);
 
+#ifdef VERIFY // Generate global matices and scatter over the processes
+	float **A_glob;
+	A_glob = alloc_2d_init(n,n);
+	float **B_glob;
+	B_glob = alloc_2d_init(n,n);
+	float **C_correct;
+	C_correct = alloc_2d_init(n,n);
+#endif // VERIFY
+
 
 	//create cartesian grid topology
 	int dims[2] = {0,0};
@@ -100,14 +109,8 @@ int main (int argc, char** argv)
 	MPI_Cart_shift(Comm_Cart, 0, -1, &bottom, &top);
 	MPI_Cart_shift(Comm_Cart, 1, 1, &left, &right);
 
+		for (int runs =0; runs < n_runs; runs ++){
 #ifdef VERIFY // Generate global matices and scatter over the processes
-		float **A_glob;
-	A_glob = alloc_2d_init(n,n);
-	float **B_glob;
-	B_glob = alloc_2d_init(n,n);
-	float **C_correct;
-	C_correct = alloc_2d_init(n,n);
-
 	srand48(712);
 	int val =0;
 	for (int j=0; j<n ; ++j) {
@@ -197,40 +200,60 @@ int main (int argc, char** argv)
 
 		MPI_Barrier(MPI_COMM_WORLD);
 
-
-		
-		if(!non_blocking){
-			send_matrices_blocking(status, A_loc_tmp, A_loc, B_loc_tmp, B_loc,  Comm_Cart, left, right, top, bottom, n_loc);
-		}
-		else{
-			send_matrices_non_blocking(mycoords, A_loc_tmp, A_loc,  B_loc_tmp, B_loc,  Comm_Cart, left, right, top, bottom, n_loc);
-		}
+		send_matrices_blocking(status, A_loc_tmp, A_loc, B_loc_tmp, B_loc,  Comm_Cart, left, right, top, bottom, n_loc);
 		swap(A_loc,A_loc_tmp);
 		swap(B_loc,B_loc_tmp);
 
 	}
-
+	// END CANNON
 
 	if(rank == 0){
-		double ellapsed_time = t.toc();
-		ofstream data_file;
-		data_file.open(timing_file, ofstream::app);
-
-		data_file << n*n << "\t" << ellapsed_time << endl;
-	}
+						double ellapsed_time = t.toc();
+						ofstream data_file;
+						data_file.open(timing_file, ofstream::app);
+						if (runs == 0){
+								//data_file << "#nodes, #dofs, ellapsed times ("<<n_runs <<" runs)" <<endl;
+								data_file << size << "," << n*n ;
+						}
+						data_file << "," << ellapsed_time;
+				}
+		}//END run_loop
+		
+		MPI_Barrier(MPI_COMM_WORLD);
+		if(rank == 0){
+				ofstream data_file;
+				data_file.open(timing_file, ofstream::app);
+				data_file << endl;
+		}
 
 #ifdef VERIFY
 	float **C_glob;
 	C_glob = alloc_2d_init(n,n);	
 	gather_matrix(rank,m,n_loc, C_glob, C_loc, Comm_Cart, status);
 
-	// if(rank == 0){
-	// 	cout << "Correct C is:\n";
-	// 	print_one_matrix(C_correct,n);
-	// }
-    if (rank == 0) cout <<"after gather: \n\n";
-    print_matrix_distribution(rank, size, C_loc, C_glob, n_loc, n);
-	print_coordiantes(mycoords, rank, rank, size);
+	if(rank == 0){
+		ofstream matrix1("correct.out");
+		//cout << "Correct c is:\n";
+		matrix1 << std::setprecision(3);
+		 matrix1 << endl;
+		for(unsigned i=0; i<n; i++){
+			for(unsigned j=0; j<n; j++){
+				matrix1 << C_correct[i][j] << "\t";
+			}
+			matrix1 << endl;
+		}
+		matrix1 << endl << endl;
+
+		ofstream matrix2("ompArray.out");
+		matrix2 << std::setprecision(3);
+		for(unsigned i=0; i<n; i++){
+			for(unsigned j=0; j<n; j++){
+				matrix2 << C_glob[i][j] << "\t";
+			}
+			matrix2 << endl;
+		}
+		matrix2 << endl << endl;
+	}
 #endif // VERIFY
 
 
