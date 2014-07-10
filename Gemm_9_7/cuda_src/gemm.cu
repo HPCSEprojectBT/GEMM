@@ -5,7 +5,7 @@
 #define BLOCK_SIZE_X 16
 #define BLOCK_SIZE_Y 12
 
-#define PRINT_ERRORS
+//#define PRINT_ERRORS
 // Matrix multiplication - Host code
 // Matrix dimensions are assumed to be multiples of BLOCK_SIZE
 //extern "C"
