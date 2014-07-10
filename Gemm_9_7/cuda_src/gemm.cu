@@ -5,6 +5,7 @@
 #define BLOCK_SIZE_X 16
 #define BLOCK_SIZE_Y 12
 
+#define PRINT_ERRORS
 // Matrix multiplication - Host code
 // Matrix dimensions are assumed to be multiples of BLOCK_SIZE
 //extern "C"
@@ -18,22 +19,35 @@ void MatMul( float * a, float * b, float * c, unsigned n) {
 		const int array_size = n*n*sizeof(float);
 
 		cudaError_t err = cudaMalloc((void**)&ad, array_size);
-		//printf("CUDA malloc A: %s\n",cudaGetErrorString(err));
-
+		
+		#ifdef  PRINT_ERRORS
+		printf("CUDA malloc A: %s\n",cudaGetErrorString(err));
+		#endif //PRINT_ERRORS
+		
 		err = cudaMemcpy(ad, a, array_size, cudaMemcpyHostToDevice);
-		//printf("Copy A to device: %s\n",cudaGetErrorString(err));
+		#ifdef  PRINT_ERRORS
+		printf("Copy A to device: %s\n",cudaGetErrorString(err));
+		#endif //PRINT_ERRORS
 
 		err = cudaMalloc((void**)&bd, array_size);
-		//printf("CUDA malloc B: %s\n",cudaGetErrorString(err));
+		#ifdef  PRINT_ERRORS
+		printf("CUDA malloc B: %s\n",cudaGetErrorString(err));
+		#endif //PRINT_ERRORS
 
 		err = cudaMemcpy(bd, b, array_size, cudaMemcpyHostToDevice);
-		//printf("Copy B to device: %s\n",cudaGetErrorString(err));
+		#ifdef  PRINT_ERRORS
+		printf("Copy B to device: %s\n",cudaGetErrorString(err));
+		#endif //PRINT_ERRORS
 
 		err = cudaMalloc((void**)&cd, array_size);
-		//printf("CUDA malloc C: %s\n",cudaGetErrorString(err));
+		#ifdef  PRINT_ERRORS
+		printf("CUDA malloc C: %s\n",cudaGetErrorString(err));
+		#endif //PRINT_ERRORS
 
 		err = cudaMemcpy(cd, c, array_size, cudaMemcpyHostToDevice);
-		//printf("Copy C to device: %s\n",cudaGetErrorString(err));
+		#ifdef  PRINT_ERRORS
+		printf("Copy C to device: %s\n",cudaGetErrorString(err));
+		#endif //PRINT_ERRORS
 	
 		// Invoke kernel
 		dim3 dimBlock(BLOCK_SIZE_X, BLOCK_SIZE_Y);
@@ -42,15 +56,16 @@ void MatMul( float * a, float * b, float * c, unsigned n) {
 		
 		MatMulKernel<<<dimGrid,dimBlock >>>(ad, bd, cd,n);
 
+		#ifdef  PRINT_ERRORS
 		err = cudaDeviceSynchronize();
-		//printf("Run kernel: %s\n", cudaGetErrorString(err));
+		printf("Run kernel: %s\n", cudaGetErrorString(err));
+		#endif //PRINT_ERRORS
 		
 		// Read C from device memory
 		err = cudaMemcpy(c, cd, array_size, cudaMemcpyDeviceToHost);
-		//printf("Copy C off of device: %s\n",cudaGetErrorString(err));
-		
-		//err = cudaDeviceSynchronize();
-		//printf("Run kernel: %s\n", cudaGetErrorString(err));
+		#ifdef  PRINT_ERRORS
+		printf("Copy C off of device: %s\n",cudaGetErrorString(err));
+		#endif //PRINT_ERRORS
 		
 		cudaFree(ad);
 		cudaFree(bd);
