@@ -10,5 +10,5 @@
 echo "On which nodes it executes" 
 echo $SLURM_JOB_NODELIST 
 echo "Now run the MPI tasks..." 
-aprun -B ../timing.out 161280 1 10
+aprun -B ../timing.out 161280 8 10
 #======END=================================
