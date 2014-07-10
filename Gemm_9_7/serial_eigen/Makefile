@@ -21,4 +21,4 @@ run:
 	sbatch batch.txt
 
 run_local:
-	mpirun -np 4 timing.out 8 0 0
+	mpirun -np 4 timing.out 9090 0 1

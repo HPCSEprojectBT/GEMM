@@ -151,8 +151,8 @@ int main (int argc, char** argv)
 						ofstream data_file;
 						data_file.open(timing_file, ofstream::app);
 						if (runs == 0){
-								//data_file << "#nodes, #dofs/site, ellapsed times ("<<n_runs <<" runs)" <<endl;
-								data_file << size << "," << n ;
+								//data_file << "#nodes, #dofs, ellapsed times ("<<n_runs <<" runs)" <<endl;
+								data_file << size << "," << n*n ;
 						}
 						data_file << "," << ellapsed_time;
 				}
