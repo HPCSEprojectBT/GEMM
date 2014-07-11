@@ -1,0 +1,21 @@
+COMPILER 	= mpiCC
+OPTI		= -O3
+OMP		= -fopenmp
+HEADERS		= aligned_allocator.hpp 3dhpcmatrix.hpp vtk_writer.hpp output.hpp timer.h
+
+all: final
+
+final: diffusion_final.cpp $(HEADERS)
+	$(COMPILER) $(OMP) $(OPTI) diffusion_final.cpp -o timing.out
+
+out_clean:
+	rm -f output/*
+	rm -f testcases/output/*
+	rm -f *.csv
+	
+clean:
+	rm -f *.out
+	rm -f testcases/*.out
+	rm -f output/*
+	rm -f testcases/output/*
+	rm -f *.csv

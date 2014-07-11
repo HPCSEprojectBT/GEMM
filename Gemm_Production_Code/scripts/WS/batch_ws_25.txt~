@@ -1,0 +1,14 @@
+#!/bin/bash -l 
+#SBATCH --job-name="serial eigen 25" 
+#SBATCH --nodes=25
+#SBATCH --ntasks=25
+#SBATCH --cpus-per-task=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=00:05:00
+
+#======START=============================== 
+echo "On which nodes it executes" 
+echo $SLURM_JOB_NODELIST 
+echo "Now run the MPI tasks..." 
+aprun -B ../timing.out 100800 15 10
+#======END=================================

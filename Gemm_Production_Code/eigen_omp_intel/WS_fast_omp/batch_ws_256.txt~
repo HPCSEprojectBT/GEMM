@@ -1,0 +1,15 @@
+#!/bin/bash -l 
+#SBATCH --job-name="eigen omp" 
+#SBATCH --nodes=169
+#SBATCH --ntasks=169
+#SBATCH --cpus-per-task=16
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=00:45:00
+export OMP_NUM_THREADS=16
+
+#======START=============================== 
+echo "On which nodes it executes" 
+echo $SLURM_JOB_NODELIST 
+echo "Now run the MPI tasks..." 
+aprun -B ../timing.out 80640 24 10
+#======END=================================
